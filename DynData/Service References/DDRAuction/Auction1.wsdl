@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="LKQCorp.LKQIntegrationService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="LKQCorp.LKQIntegrationService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="LKQCorp.LKQIntegrationService/Imports">
+      <xsd:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd0" namespace="LKQCorp.LKQIntegrationService" />
+      <xsd:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+      <xsd:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" />
+      <xsd:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" />
+      <xsd:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Auction_GetBranchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchList" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBranchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBranchInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchInfo" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBranchInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetAuctionDatesByBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionDatesByBranch" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetAuctionDatesByBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionDatesByBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetUtcAuctionDateByBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtcAuctionDateByBranch" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetUtcAuctionDateByBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtcAuctionDateByBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockListByAuctionDateByBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockListByAuctionDateByBranch" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockListByAuctionDateByBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockListByAuctionDateByBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetChangedStockListByAuctionDateByBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangedStockListByAuctionDateByBranch" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetChangedStockListByAuctionDateByBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangedStockListByAuctionDateByBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetChangedStockListbyLastAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangedStockListbyLastAccess" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetChangedStockListbyLastAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangedStockListbyLastAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStocksRecentBids_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStocksRecentBids" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStocksRecentBids_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStocksRecentBidsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockCurrentBid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockCurrentBid" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockCurrentBid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockCurrentBidResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetPartnerIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartnerIds" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetPartnerIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartnerIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockInfo" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBuyItNowStocks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyItNowStocks" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBuyItNowStocks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyItNowStocksResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetInterchangeByVin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInterchangeByVin" />
+  </wsdl:message>
+  <wsdl:message name="Auction_GetInterchangeByVin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInterchangeByVinResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Auction">
+    <wsdl:operation name="GetBranchList">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBranchList" message="tns:Auction_GetBranchList_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBranchListResponse" message="tns:Auction_GetBranchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchInfo">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBranchInfo" message="tns:Auction_GetBranchInfo_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBranchInfoResponse" message="tns:Auction_GetBranchInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionDatesByBranch">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranch" message="tns:Auction_GetAuctionDatesByBranch_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranchResponse" message="tns:Auction_GetAuctionDatesByBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtcAuctionDateByBranch">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranch" message="tns:Auction_GetUtcAuctionDateByBranch_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranchResponse" message="tns:Auction_GetUtcAuctionDateByBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockListByAuctionDateByBranch">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranch" message="tns:Auction_GetStockListByAuctionDateByBranch_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranchResponse" message="tns:Auction_GetStockListByAuctionDateByBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedStockListByAuctionDateByBranch">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranch" message="tns:Auction_GetChangedStockListByAuctionDateByBranch_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranchResponse" message="tns:Auction_GetChangedStockListByAuctionDateByBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedStockListbyLastAccess">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccess" message="tns:Auction_GetChangedStockListbyLastAccess_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccessResponse" message="tns:Auction_GetChangedStockListbyLastAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStocksRecentBids">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBids" message="tns:Auction_GetStocksRecentBids_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBidsResponse" message="tns:Auction_GetStocksRecentBids_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockCurrentBid">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBid" message="tns:Auction_GetStockCurrentBid_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBidResponse" message="tns:Auction_GetStockCurrentBid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerIds">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetPartnerIds" message="tns:Auction_GetPartnerIds_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetPartnerIdsResponse" message="tns:Auction_GetPartnerIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockInfo">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockInfo" message="tns:Auction_GetStockInfo_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockInfoResponse" message="tns:Auction_GetStockInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyItNowStocks">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocks" message="tns:Auction_GetBuyItNowStocks_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocksResponse" message="tns:Auction_GetBuyItNowStocks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInterchangeByVin">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVin" message="tns:Auction_GetInterchangeByVin_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVinResponse" message="tns:Auction_GetInterchangeByVin_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

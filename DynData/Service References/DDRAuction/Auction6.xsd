@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ResultWithArrayOfBranchCodesByPartner">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBranchCodesByPartner" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q1:ArrayOfBranchCodesByPartner" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfBranchCodesByPartner" nillable="true" type="tns:ResultWithArrayOfBranchCodesByPartner" />
+  <xs:complexType name="ServiceResult">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="WasSuccessful" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResult" nillable="true" type="tns:ServiceResult" />
+  <xs:complexType name="ResultWithArrayOfBranchLocationsByPartner">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBranchLocationsByPartner" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q3:ArrayOfBranchLocationsByPartner" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfBranchLocationsByPartner" nillable="true" type="tns:ResultWithArrayOfBranchLocationsByPartner" />
+  <xs:complexType name="ResultWithArrayOfBranchAuction">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBranchAuction" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q4:ArrayOfBranchAuction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfBranchAuction" nillable="true" type="tns:ResultWithArrayOfBranchAuction" />
+  <xs:complexType name="ResultWithArrayOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfstring" Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RequestedData" nillable="true" type="q5:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfstring" nillable="true" type="tns:ResultWithArrayOfstring" />
+  <xs:complexType name="ResultWithArrayOfStockNumbersByBranchCode">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfStockNumbersByBranchCode" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q6:ArrayOfStockNumbersByBranchCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfStockNumbersByBranchCode" nillable="true" type="tns:ResultWithArrayOfStockNumbersByBranchCode" />
+  <xs:complexType name="ResultWithArrayOfRecentBidsByBranchCode">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfRecentBidsByBranchCode" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q7:ArrayOfRecentBidsByBranchCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfRecentBidsByBranchCode" nillable="true" type="tns:ResultWithArrayOfRecentBidsByBranchCode" />
+  <xs:complexType name="ResultWithStockNumberRecentBid">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="StockNumberRecentBid" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q8:StockNumberRecentBid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithStockNumberRecentBid" nillable="true" type="tns:ResultWithStockNumberRecentBid" />
+  <xs:complexType name="ResultWithArrayOfAuctionPartner">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAuctionPartner" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q9:ArrayOfAuctionPartner" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfAuctionPartner" nillable="true" type="tns:ResultWithArrayOfAuctionPartner" />
+  <xs:complexType name="ResultWithArrayOfVehicleInformation">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfVehicleInformation" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q10:ArrayOfVehicleInformation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfVehicleInformation" nillable="true" type="tns:ResultWithArrayOfVehicleInformation" />
+  <xs:complexType name="ResultWithArrayOfBuyItNowStock">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBuyItNowStock" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q11:ArrayOfBuyItNowStock" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfBuyItNowStock" nillable="true" type="tns:ResultWithArrayOfBuyItNowStock" />
+  <xs:complexType name="ResultWithInterchangeInfoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InterchangeInfoResult" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q12:InterchangeInfoResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithInterchangeInfoResult" nillable="true" type="tns:ResultWithInterchangeInfoResult" />
+</xs:schema>

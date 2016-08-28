@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="LKQCorp.LKQIntegrationService" elementFormDefault="qualified" targetNamespace="LKQCorp.LKQIntegrationService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" />
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" />
+  <xs:element name="GetBranchList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q1:GetBranchListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetBranchListResult" nillable="true" type="q2:ResultWithArrayOfBranchCodesByPartner" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q3:GetBranchInfoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetBranchInfoResult" nillable="true" type="q4:ResultWithArrayOfBranchLocationsByPartner" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuctionDatesByBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q5:GetBranchAuctionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuctionDatesByBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetAuctionDatesByBranchResult" nillable="true" type="q6:ResultWithArrayOfBranchAuction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtcAuctionDateByBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q7:GetBranchAuctionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtcAuctionDateByBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetUtcAuctionDateByBranchResult" nillable="true" type="q8:ResultWithArrayOfBranchAuction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockListByAuctionDateByBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q9:GetStockListByAuctionDateByBranchRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockListByAuctionDateByBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetStockListByAuctionDateByBranchResult" nillable="true" type="q10:ResultWithArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangedStockListByAuctionDateByBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q11:GetStockListByAuctionDateByBranchRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangedStockListByAuctionDateByBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetChangedStockListByAuctionDateByBranchResult" nillable="true" type="q12:ResultWithArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangedStockListbyLastAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q13:PartnerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangedStockListbyLastAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetChangedStockListbyLastAccessResult" nillable="true" type="q14:ResultWithArrayOfStockNumbersByBranchCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStocksRecentBids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q15:PartnerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStocksRecentBidsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetStocksRecentBidsResult" nillable="true" type="q16:ResultWithArrayOfRecentBidsByBranchCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockCurrentBid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q17:CurrentBidRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockCurrentBidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetStockCurrentBidResult" nillable="true" type="q18:ResultWithStockNumberRecentBid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartnerIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" minOccurs="0" name="request" nillable="true" type="q19:UserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartnerIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetPartnerIdsResult" nillable="true" type="q20:ResultWithArrayOfAuctionPartner" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q21:GetStockInfoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetStockInfoResult" nillable="true" type="q22:ResultWithArrayOfVehicleInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuyItNowStocks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q23:PartnerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuyItNowStocksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetBuyItNowStocksResult" nillable="true" type="q24:ResultWithArrayOfBuyItNowStock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInterchangeByVin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q25:VehicleInterchangeInfoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInterchangeByVinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="GetInterchangeByVinResult" nillable="true" type="q26:ResultWithInterchangeInfoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

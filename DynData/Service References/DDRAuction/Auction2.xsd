@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" />
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="GetBranchListRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q1:UserRequest">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PartnerIds" nillable="true" type="q2:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetBranchListRequest" nillable="true" type="tns:GetBranchListRequest" />
+  <xs:complexType name="ArrayOfBranchCodesByPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchCodesByPartner" nillable="true" type="tns:BranchCodesByPartner" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranchCodesByPartner" nillable="true" type="tns:ArrayOfBranchCodesByPartner" />
+  <xs:complexType name="BranchCodesByPartner">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BranchCodes" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BranchCodesByPartner" nillable="true" type="tns:BranchCodesByPartner" />
+  <xs:complexType name="GetBranchInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q4:UserRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BranchCodesByPartner" nillable="true" type="tns:ArrayOfBranchCodesByPartner" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetBranchInfoRequest" nillable="true" type="tns:GetBranchInfoRequest" />
+  <xs:complexType name="ArrayOfBranchLocationsByPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchLocationsByPartner" nillable="true" type="tns:BranchLocationsByPartner" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranchLocationsByPartner" nillable="true" type="tns:ArrayOfBranchLocationsByPartner" />
+  <xs:complexType name="BranchLocationsByPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchLocations" nillable="true" type="tns:ArrayOfBranchLocation" />
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BranchLocationsByPartner" nillable="true" type="tns:BranchLocationsByPartner" />
+  <xs:complexType name="ArrayOfBranchLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchLocation" nillable="true" type="tns:BranchLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranchLocation" nillable="true" type="tns:ArrayOfBranchLocation" />
+  <xs:complexType name="BranchLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchLocationId" type="xs:int" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Created" type="q5:DateTimeOffset" />
+      <xs:element minOccurs="0" name="CultureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateProvince" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="UpdatedAt" type="q6:DateTimeOffset" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BranchLocation" nillable="true" type="tns:BranchLocation" />
+  <xs:complexType name="GetBranchAuctionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerAndBranchRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetBranchAuctionsRequest" nillable="true" type="tns:GetBranchAuctionsRequest" />
+  <xs:complexType name="PartnerAndBranchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PartnerAndBranchRequest" nillable="true" type="tns:PartnerAndBranchRequest" />
+  <xs:complexType name="PartnerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q7:UserRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartnerId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PartnerRequest" nillable="true" type="tns:PartnerRequest" />
+  <xs:complexType name="ArrayOfBranchAuction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchAuction" nillable="true" type="tns:BranchAuction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranchAuction" nillable="true" type="tns:ArrayOfBranchAuction" />
+  <xs:complexType name="BranchAuction">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AuctionDate" type="q8:DateTimeOffset" />
+      <xs:element minOccurs="0" name="AuctionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchAuctionId" type="xs:int" />
+      <xs:element minOccurs="0" name="BranchLocationId" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DifferentialRefreshLastBegun" nillable="true" type="q9:DateTimeOffset" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DifferentialRefreshLastCompleted" nillable="true" type="q10:DateTimeOffset" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="FullRefreshLastBegun" nillable="true" type="q11:DateTimeOffset" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="FullRefreshLastCompleted" nillable="true" type="q12:DateTimeOffset" />
+      <xs:element minOccurs="0" name="IsAuctionActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsIBidAuction" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPublicAuction" type="xs:boolean" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="OnlineBiddingClose" nillable="true" type="q13:DateTimeOffset" />
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeZoneId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BranchAuction" nillable="true" type="tns:BranchAuction" />
+  <xs:complexType name="GetStockListByAuctionDateByBranchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerAndBranchRequest">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AuctionDate" type="q14:DateTimeOffset" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetStockListByAuctionDateByBranchRequest" nillable="true" type="tns:GetStockListByAuctionDateByBranchRequest" />
+  <xs:complexType name="ArrayOfStockNumbersByBranchCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StockNumbersByBranchCode" nillable="true" type="tns:StockNumbersByBranchCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStockNumbersByBranchCode" nillable="true" type="tns:ArrayOfStockNumbersByBranchCode" />
+  <xs:complexType name="StockNumbersByBranchCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StockNumbers" nillable="true" type="q15:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StockNumbersByBranchCode" nillable="true" type="tns:StockNumbersByBranchCode" />
+  <xs:complexType name="ArrayOfRecentBidsByBranchCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecentBidsByBranchCode" nillable="true" type="tns:RecentBidsByBranchCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecentBidsByBranchCode" nillable="true" type="tns:ArrayOfRecentBidsByBranchCode" />
+  <xs:complexType name="RecentBidsByBranchCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecentBids" nillable="true" type="tns:ArrayOfStockNumberRecentBid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecentBidsByBranchCode" nillable="true" type="tns:RecentBidsByBranchCode" />
+  <xs:complexType name="ArrayOfStockNumberRecentBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StockNumberRecentBid" nillable="true" type="tns:StockNumberRecentBid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStockNumberRecentBid" nillable="true" type="tns:ArrayOfStockNumberRecentBid" />
+  <xs:complexType name="StockNumberRecentBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentBid" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StockNumberRecentBid" nillable="true" type="tns:StockNumberRecentBid" />
+  <xs:complexType name="CurrentBidRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrentBidRequest" nillable="true" type="tns:CurrentBidRequest" />
+  <xs:complexType name="ArrayOfAuctionPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuctionPartner" nillable="true" type="tns:AuctionPartner" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuctionPartner" nillable="true" type="tns:ArrayOfAuctionPartner" />
+  <xs:complexType name="AuctionPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int" />
+      <xs:element minOccurs="0" name="PartnerName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuctionPartner" nillable="true" type="tns:AuctionPartner" />
+  <xs:complexType name="GetStockInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StockNumbersByBranchCode" nillable="true" type="tns:StockNumbersByBranchCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetStockInfoRequest" nillable="true" type="tns:GetStockInfoRequest" />
+  <xs:complexType name="ArrayOfVehicleInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleInformation" nillable="true" type="tns:VehicleInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleInformation" nillable="true" type="tns:ArrayOfVehicleInformation" />
+  <xs:complexType name="VehicleInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuctionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuctionLane" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchAuctionId" type="xs:int" />
+      <xs:element minOccurs="0" name="BuyItNowInformation" nillable="true" type="tns:BuyItNowStock" />
+      <xs:element minOccurs="0" name="CertState" nillable="true" type="xs:string" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Created" type="q16:DateTimeOffset" />
+      <xs:element minOccurs="0" name="CurrentBid" nillable="true" type="tns:VehicleBid" />
+      <xs:element minOccurs="0" name="DecodedVehicleIdentification" nillable="true" type="tns:DecodedVehicleIdentification" />
+      <xs:element minOccurs="0" name="ExtraInformation" nillable="true" type="tns:ArrayOfVehicleInformationExtra" />
+      <xs:element minOccurs="0" name="Images" nillable="true" type="tns:ArrayOfVehicleImage" />
+      <xs:element minOccurs="0" name="ItemId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeyStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LossType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Odometer" type="xs:int" />
+      <xs:element minOccurs="0" name="OdometerStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryDamage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RunAndDrive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaleDocument" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaleDocumentBrand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaleDocumentNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalvageType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryDamage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Seller" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShrinkWrap" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecialNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="UpdatedAt" type="q17:DateTimeOffset" />
+      <xs:element minOccurs="0" name="VIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhoCanBuy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformation" nillable="true" type="tns:VehicleInformation" />
+  <xs:complexType name="BuyItNowStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuyItNowId" type="xs:int" />
+      <xs:element minOccurs="0" name="BuyItNowPrice" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="PreBidClose" nillable="true" type="q18:DateTimeOffset" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtcCloseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuyItNowStock" nillable="true" type="tns:BuyItNowStock" />
+  <xs:complexType name="VehicleBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BidId" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentBid" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="UpdatedAt" type="q19:DateTimeOffset" />
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleBid" nillable="true" type="tns:VehicleBid" />
+  <xs:complexType name="DecodedVehicleIdentification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckDigit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cylinders" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriveLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Engine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RestraintSystem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transmission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VinInformationId" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DecodedVehicleIdentification" nillable="true" type="tns:DecodedVehicleIdentification" />
+  <xs:complexType name="ArrayOfVehicleInformationExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleInformationExtra" nillable="true" type="tns:VehicleInformationExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleInformationExtra" nillable="true" type="tns:ArrayOfVehicleInformationExtra" />
+  <xs:complexType name="VehicleInformationExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InfoId" type="xs:int" />
+      <xs:element minOccurs="0" name="InfoName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InfoValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformationExtra" nillable="true" type="tns:VehicleInformationExtra" />
+  <xs:complexType name="ArrayOfVehicleImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleImage" nillable="true" type="tns:VehicleImage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleImage" nillable="true" type="tns:ArrayOfVehicleImage" />
+  <xs:complexType name="VehicleImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageId" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsThumbnail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleImage" nillable="true" type="tns:VehicleImage" />
+  <xs:complexType name="ArrayOfBuyItNowStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BuyItNowStock" nillable="true" type="tns:BuyItNowStock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBuyItNowStock" nillable="true" type="tns:ArrayOfBuyItNowStock" />
+  <xs:complexType name="VehicleInterchangeInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q20:UserRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Vin" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VehicleInterchangeInfoRequest" nillable="true" type="tns:VehicleInterchangeInfoRequest" />
+  <xs:complexType name="InterchangeInfoResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InterchangeInfo" nillable="true" type="tns:ArrayOfInterchangeNumberInfo" />
+      <xs:element minOccurs="0" name="Vin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InterchangeInfoResult" nillable="true" type="tns:InterchangeInfoResult" />
+  <xs:complexType name="ArrayOfInterchangeNumberInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InterchangeNumberInfo" nillable="true" type="tns:InterchangeNumberInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInterchangeNumberInfo" nillable="true" type="tns:ArrayOfInterchangeNumberInfo" />
+  <xs:complexType name="InterchangeNumberInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InterchangeList" nillable="true" type="tns:ArrayOfInterchange" />
+      <xs:element minOccurs="0" name="PartTypeNbr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InterchangeNumberInfo" nillable="true" type="tns:InterchangeNumberInfo" />
+  <xs:complexType name="ArrayOfInterchange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Interchange" nillable="true" type="tns:Interchange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInterchange" nillable="true" type="tns:ArrayOfInterchange" />
+  <xs:complexType name="Interchange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ICDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterchangeNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Interchange" nillable="true" type="tns:Interchange" />
+</xs:schema>

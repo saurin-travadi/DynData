@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UserRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserRequestInfo" nillable="true" type="tns:UserInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRequest" nillable="true" type="tns:UserRequest" />
+  <xs:complexType name="UserInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessTypeForAccountNumber" type="tns:AccountNumberBusinessType" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPassword" nillable="true" type="xs:string" />
+      <xs:element name="VerificationCode" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInformation" nillable="true" type="tns:UserInformation" />
+  <xs:simpleType name="AccountNumberBusinessType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Aftermarket" />
+      <xs:enumeration value="Salvage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccountNumberBusinessType" nillable="true" type="tns:AccountNumberBusinessType" />
+</xs:schema>
