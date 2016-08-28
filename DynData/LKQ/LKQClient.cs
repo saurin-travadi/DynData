@@ -105,6 +105,8 @@ namespace DynData.LKQ
                     //Save to DB
 
                 });
+
+                //System.Threading.Thread.Sleep(1000);
             });
         }
     }
