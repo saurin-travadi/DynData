@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynData", "DynData\DynData.csproj", "{5F5A3FB2-687B-48AC-8BAC-70C7567F32F2}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DynDataDB", "DynDataDB\DynDataDB.sqlproj", "{892A0ADA-FA4F-4D20-A57C-29F3503CEF8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynService", "DynService\DynService.csproj", "{5EFCDBE0-C5F9-47F0-A6CE-9B025C087977}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{5F5A3FB2-687B-48AC-8BAC-70C7567F32F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F5A3FB2-687B-48AC-8BAC-70C7567F32F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F5A3FB2-687B-48AC-8BAC-70C7567F32F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892A0ADA-FA4F-4D20-A57C-29F3503CEF8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{892A0ADA-FA4F-4D20-A57C-29F3503CEF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{892A0ADA-FA4F-4D20-A57C-29F3503CEF8B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{892A0ADA-FA4F-4D20-A57C-29F3503CEF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{892A0ADA-FA4F-4D20-A57C-29F3503CEF8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892A0ADA-FA4F-4D20-A57C-29F3503CEF8B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5EFCDBE0-C5F9-47F0-A6CE-9B025C087977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFCDBE0-C5F9-47F0-A6CE-9B025C087977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFCDBE0-C5F9-47F0-A6CE-9B025C087977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFCDBE0-C5F9-47F0-A6CE-9B025C087977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

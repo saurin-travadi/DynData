@@ -1,0 +1,10 @@
+﻿create PROCEDURE SP_AUCTION
+as
+
+MERGE AUCTION AS TARGET
+USING (select * from auction_stg where CONVERT (date, auctiondatetime) >= CONVERT (date, getdate())) AS SOURCE
+ON (TARGET.branchID = SOURCE.branchID AND TARGET.AUCTIONDATETIME = SOURCE.AUCTIONDATETIME)
+WHEN NOT MATCHED BY TARGET
+    THEN INSERT(branchID,AUCTIONDATETIME) VALUES(SOURCE.branchID,SOURCE.AUCTIONDATETIME);
+    
+truncate table auction_stg
