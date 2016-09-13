@@ -66,14 +66,6 @@
       <Project>{5f5a3fb2-687b-48ac-8bac-70c7567f32f2}</Project>
       <Name>DynData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GetDriveData\GetDriveData.csproj">
-      <Project>{f57e0eb0-f385-4c55-b0f2-c2509146c75c}</Project>
-      <Name>GetDriveData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GetTabDelimitedFile\GetTabDelimitedFile.csproj">
-      <Project>{f1134806-48a1-46f6-ab41-e045bd65a618}</Project>
-      <Name>GetTabDelimitedFile</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -69,8 +69,7 @@ namespace Service
 
                 //check next download date for Data & Image from config and run download
                 clsLog.LogInfo("Reading next run date and time ...");
-
-                if (1 == 0)     
+                if (IsNextRun()==1) 
                 {
                     new DynData.LKQ.LKQClient().GetData();
                     new DynData.IAA.IAAClient().GetData();
@@ -82,16 +81,17 @@ namespace Service
             }
         }
 
-        private DateTime GetNextRun(string program)
+        private int IsNextRun()
         {
             try
             {
-                return System.DateTime.Now;
+                var objRet = clsDB.funcExecuteSQLScalar("SP_NextJob", ConfigurationManager.ConnectionStrings["Connection"].ConnectionString);
+                return Convert.ToInt16(objRet);
             }
             catch (Exception ex)
             {
                 clsLog.LogError(ex.ToString());
-                return System.DateTime.Now.AddDays(1);
+                return 0;
             }
         }
 

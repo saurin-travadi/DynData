@@ -69,36 +69,43 @@ namespace DynData.LKQ
 
             if (response.WasSuccessful && response.RequestedData != null)
             {
-                //parse response, get a list of branch and update property for next method.
-                BranchList = response.RequestedData[0].BranchCodes.ToList().ConvertAll(c => new Branch() { BranchCode = c });
-
-                
-
-                var branchDataTable = new DataTable();
-                using (var reader = ObjectReader.Create(BranchList, "BranchCode"))
+                try
                 {
-                    branchDataTable.Load(reader);
-                }
+                    //parse response, get a list of branch and update property for next method.
+                    BranchList = response.RequestedData[0].BranchCodes.ToList().ConvertAll(c => new Branch() { BranchCode = c });
 
-                
-                //and send it to DB. Merge this list with existing branch list
-                using (SqlConnection con = new SqlConnection(connection))
-                {
-                    using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+
+
+                    var branchDataTable = new DataTable();
+                    using (var reader = ObjectReader.Create(BranchList, "BranchCode"))
                     {
-                        sqlBulkCopy.DestinationTableName = "dyndata.dbo.branch_stg";
-                        con.Open();
-                        sqlBulkCopy.BulkCopyTimeout = 0;
-                        sqlBulkCopy.WriteToServer(branchDataTable);
+                        branchDataTable.Load(reader);
+                    }
 
-                        SqlCommand cmd = new SqlCommand("dyndata.dbo.SP_BRANCH", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.ExecuteNonQuery();
 
-                        con.Close();
+                    //and send it to DB. Merge this list with existing branch list
+                    using (SqlConnection con = new SqlConnection(connection))
+                    {
+                        using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+                        {
+                            sqlBulkCopy.DestinationTableName = "dyndata.dbo.branch_stg";
+                            con.Open();
+                            sqlBulkCopy.BulkCopyTimeout = 0;
+                            sqlBulkCopy.WriteToServer(branchDataTable);
+
+                            SqlCommand cmd = new SqlCommand("dyndata.dbo.SP_BRANCH", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.ExecuteNonQuery();
+
+                            con.Close();
+                        }
                     }
                 }
-             
+                catch (Exception ex)
+                {
+                    clsLog.LogInfo("GetBranchList - Error while getting branch list from remote. Error " + ex.Message);
+                }
+
             }
             else
             {
@@ -115,52 +122,56 @@ namespace DynData.LKQ
 
                 if (response.WasSuccessful && response.RequestedData != null)
                 {
-                     branch.Auctions = new List<BranchAuction>(response.RequestedData.ToList().ConvertAll(c => new BranchAuction() { AuctionDate = c.AuctionDate.DateTime }).ToList());
-                    
+                    branch.Auctions = new List<BranchAuction>(response.RequestedData.ToList().ConvertAll(c => new BranchAuction() { AuctionDate = c.AuctionDate.DateTime }).ToList());
+
                 }
                 else
                 {
                     clsLog.LogInfo("GetAuctionDates - didn't get auction dates for branch " + branch.BranchCode);
                 }
-            }
+            });
 
-
-            );
-
-            var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-            
-            var branchDataTable = new DataTable();
-            
-            var flatBranchList = from b in BranchList
-                                 from a in b.Auctions
-                                     
-                                 select new FlatBranch { BranchCode = b.BranchCode, AuctionDate = a.AuctionDate }; 
-                        
-            using (var reader = ObjectReader.Create(flatBranchList,"BranchCode","AuctionDate"))
+            try
             {
-                branchDataTable.Load(reader);
-            }
-            
-            using (SqlConnection con = new SqlConnection(connection))
-            {
-                using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+                var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+
+                var branchDataTable = new DataTable();
+
+                var flatBranchList = from b in BranchList
+                                     from a in b.Auctions
+
+                                     select new FlatBranch { BranchCode = b.BranchCode, AuctionDate = a.AuctionDate };
+
+                using (var reader = ObjectReader.Create(flatBranchList, "BranchCode", "AuctionDate"))
                 {
-                    sqlBulkCopy.DestinationTableName = "dyndata.dbo.Auction_stg";
-                    sqlBulkCopy.ColumnMappings.Add("BranchCode", "BranchID");
-                    sqlBulkCopy.ColumnMappings.Add("AuctionDate", "AuctionDateTime");
-                    con.Open();
-                    sqlBulkCopy.BulkCopyTimeout = 0;
-                    sqlBulkCopy.WriteToServer(branchDataTable);
-
-
-
-                    SqlCommand cmd = new SqlCommand("dyndata.dbo.SP_AUCTION", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.ExecuteNonQuery();
-
-                    con.Close();
+                    branchDataTable.Load(reader);
                 }
+
+                using (SqlConnection con = new SqlConnection(connection))
+                {
+                    using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+                    {
+                        sqlBulkCopy.DestinationTableName = "dyndata.dbo.Auction_stg";
+                        sqlBulkCopy.ColumnMappings.Add("BranchCode", "BranchID");
+                        sqlBulkCopy.ColumnMappings.Add("AuctionDate", "AuctionDateTime");
+                        con.Open();
+                        sqlBulkCopy.BulkCopyTimeout = 0;
+                        sqlBulkCopy.WriteToServer(branchDataTable);
+
+
+
+                        SqlCommand cmd = new SqlCommand("dyndata.dbo.SP_AUCTION", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLog.LogInfo("GetAuctionDates - Error while getting auction dates. Error " + ex.Message);
             }
 
 
@@ -179,54 +190,61 @@ namespace DynData.LKQ
                     //Get response 
                     if (response.WasSuccessful && response.RequestedData != null)
                     {
-                        
                         auction.StockNums = new List<BranchAuctionStock>(response.RequestedData.ToList().ConvertAll(c => new BranchAuctionStock() { StockNum = c }).ToList());
-                        
                     }
-
-                   
+                    else
+                    {
+                        clsLog.LogInfo("GetStockList - didn't get stock list for branch " + branch.BranchCode + " and auction date " + auction.AuctionDate.ToShortDateString());
+                    }
                 });
 
-                //System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(1000);
             });
 
-           
-            var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-            //and send it to DB. Merge this list with existing branch list
-           
-            var branchDataTable = new DataTable();
-            
-            var flatBranchList = from b in BranchList
-                                 from a in b.Auctions
-                                 from s in a.StockNums
-                                 select new FlatBranch { BranchCode = b.BranchCode, AuctionDate = a.AuctionDate , StockNum = s.StockNum };
-           
-            using (var reader = ObjectReader.Create(flatBranchList))
+
+            try
             {
-                branchDataTable.Load(reader);
-            }
-            
-            using (SqlConnection con = new SqlConnection(connection))
-            {
-                using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+                var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+                //and send it to DB. Merge this list with existing branch list
+
+                var branchDataTable = new DataTable();
+
+                var flatBranchList = from b in BranchList
+                                     from a in b.Auctions
+                                     from s in a.StockNums
+                                     select new FlatBranch { BranchCode = b.BranchCode, AuctionDate = a.AuctionDate, StockNum = s.StockNum };
+
+                using (var reader = ObjectReader.Create(flatBranchList))
                 {
-                    sqlBulkCopy.DestinationTableName = "dyndata.dbo.Stock_stg";
-                    sqlBulkCopy.ColumnMappings.Add("BranchCode", "BranchID");
-                    sqlBulkCopy.ColumnMappings.Add("AuctionDate", "AuctionDateTime");
-                    sqlBulkCopy.ColumnMappings.Add("StockNum", "StockNumber");
-                    con.Open();
-                    sqlBulkCopy.BulkCopyTimeout = 0;
-                    sqlBulkCopy.WriteToServer(branchDataTable);
-
-
-
-                    SqlCommand cmd = new SqlCommand("dyndata.dbo.SP_STOCK", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.ExecuteNonQuery();
-
-                    con.Close();
+                    branchDataTable.Load(reader);
                 }
+
+                using (SqlConnection con = new SqlConnection(connection))
+                {
+                    using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+                    {
+                        sqlBulkCopy.DestinationTableName = "dyndata.dbo.Stock_stg";
+                        sqlBulkCopy.ColumnMappings.Add("BranchCode", "BranchID");
+                        sqlBulkCopy.ColumnMappings.Add("AuctionDate", "AuctionDateTime");
+                        sqlBulkCopy.ColumnMappings.Add("StockNum", "StockNumber");
+                        con.Open();
+                        sqlBulkCopy.BulkCopyTimeout = 0;
+                        sqlBulkCopy.WriteToServer(branchDataTable);
+
+
+
+                        SqlCommand cmd = new SqlCommand("dyndata.dbo.SP_STOCK", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLog.LogInfo("GetStockList - Error while getting stock list. Error " + ex.Message);
             }
         }
     }
