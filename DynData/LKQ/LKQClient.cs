@@ -69,13 +69,67 @@ namespace DynData.LKQ
             //Create a stroed proc to return datatable, loop thru it and populate vehicleList. See sample below
 
             /*
-            ItemID, Lane, Slot, Start, AuctionDate, BranchCode, StockNo, VIN, VehicleYear, VehicleMake, VehicleModel, Transmission, RunAndDrive, 
-            OdoBrand, Odometer, PrimaryDamage, SecondaryDamage, VehicleTitle, LossType, SaleDocument, 
-            
-            ThumbnailURL, LargeURL => TALK TO SAURIN ON HOW TO GENERATE URL
-            */
+           ItemID, Lane, Slot, Start, AuctionDate, BranchCode, StockNo, VIN, VehicleYear, VehicleMake, VehicleModel, Transmission, 
+           RunAndDrive, OdoBrand, Odometer, PrimaryDamage, SecondaryDamage, VehicleTitle, LossType, SaleDocument, 
 
-            vehicleList.Add(new VehicleInformationDto()
+           ThumbnailURL, LargeURL => TALK TO SAURIN ON HOW TO GENERATE URL
+           */
+
+            DataTable dt = new DataTable();
+
+            var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            string query = "select ItemID, Lane, Slot, Start, livedate, BranchCode, StockNo, VIN, VehicleYear, VehicleMake, " +
+                                " VehicleModel, Transmission, RunAndDrive, OdoBrand, Odometer, PrimaryDamage, SecondaryDamage, " +
+                                " VehicleTitle, LossType, SaleDocument " +
+                           " from NonDDRStock where stockno not in " +
+                           " (select stocknumber from Stock)";
+
+            SqlConnection con = new SqlConnection(connection);
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+                        
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            
+            da.Fill(dt);
+            con.Close();
+            da.Dispose();
+
+            /*foreach (DataRow dr in dt.Rows)
+            {
+                vehicleList.Add(dr);
+            }*/
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                vehicleList.Add(new VehicleInformationDto()
+                {
+                    ItemID = Convert.ToInt32(dt.Rows[i]["ItemID"]),
+                    Lane = dt.Rows[i]["Lane"].ToString(),
+                    Slot = dt.Rows[i]["Slot"].ToString(),
+                    Start = dt.Rows[i]["Start"].ToString(),
+                    //AuctionDate = new DateTimeOffset(System.DateTime.Now),
+                    BranchCode = Convert.ToInt32(dt.Rows[i]["BranchCode"]),
+                    StockNo = dt.Rows[i]["StockNo"].ToString(),
+                    VIN = dt.Rows[i]["VIN"].ToString(),
+                    VehicleYear = dt.Rows[i]["VehicleYear"].ToString(),
+                    VehicleMake = dt.Rows[i]["VehicleMake"].ToString(),
+                    VehicleModel = dt.Rows[i]["VehicleModel"].ToString(),
+                    Transmission = dt.Rows[i]["Transmission"].ToString(),
+                    RunAndDrive = dt.Rows[i]["RunAndDrive"].ToString(),
+                    OdoBrand = dt.Rows[i]["OdoBrand"].ToString(),
+                    Odometer = dt.Rows[i]["Odometer"].ToString(),
+                    PrimaryDamage = dt.Rows[i]["PrimaryDamage"].ToString(),
+                    SecondaryDamage = dt.Rows[i]["SecondaryDamage"].ToString(),
+                    VehicleTitle = dt.Rows[i]["VehicleTitle"].ToString(),
+                    LossType = dt.Rows[i]["LossType"].ToString(),
+                    SaleDocument = dt.Rows[i]["SaleDocument"].ToString(),
+                    ThumbnailURL = "",      //don't populate with values in DB
+                    LargeURL = ""
+                });
+            }
+
+
+            /*vehicleList.Add(new VehicleInformationDto()
             {
                 ItemID = 1,
                 Lane = "a",
@@ -99,7 +153,7 @@ namespace DynData.LKQ
                 SaleDocument = "clear",
                 ThumbnailURL = "",      //don't populate with values in DB
                 LargeURL = ""
-            });
+            });*/
 
             var request = new VehicleUploadRequest() { VehicleInformationList = vehicleList.ToArray(), UserRequestInfo = User };       
             var response = Client.UploadVehicleInformation(request);    //NOTE: it's erroring out.

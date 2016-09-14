@@ -605,8 +605,9 @@ namespace DynData.DDRAuction {
         private string PrimaryDamageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RunAndDriveField;
-        
+        //private int RunAndDriveField;
+        private string RunAndDriveField;
+
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SaleDocumentField;
         
@@ -617,8 +618,9 @@ namespace DynData.DDRAuction {
         private string SlotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StartField;
-        
+        //private int StartField;
+        private string StartField;
+
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StockNoField;
         
@@ -810,7 +812,7 @@ namespace DynData.DDRAuction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RunAndDrive {
+        /*public int RunAndDrive {
             get {
                 return this.RunAndDriveField;
             }
@@ -820,8 +822,24 @@ namespace DynData.DDRAuction {
                     this.RaisePropertyChanged("RunAndDrive");
                 }
             }
+        }*/
+
+        public string RunAndDrive
+        {
+            get
+            {
+                return this.RunAndDriveField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.RunAndDriveField, value) != true))
+                {
+                    this.RunAndDriveField = value;
+                    this.RaisePropertyChanged("RunAndDrive");
+                }
+            }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string SaleDocument {
             get {
@@ -862,7 +880,7 @@ namespace DynData.DDRAuction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Start {
+        /*public int Start {
             get {
                 return this.StartField;
             }
@@ -872,8 +890,24 @@ namespace DynData.DDRAuction {
                     this.RaisePropertyChanged("Start");
                 }
             }
+        }*/
+
+        public string Start
+        {
+            get
+            {
+                return this.StartField;
+            }
+            set
+            {
+                if ((object.ReferenceEquals(this.StartField, value) != true))
+                {
+                    this.StartField = value;
+                    this.RaisePropertyChanged("Start");
+                }
+            }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string StockNo {
             get {
