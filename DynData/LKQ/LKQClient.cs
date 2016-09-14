@@ -75,29 +75,23 @@ namespace DynData.LKQ
            ThumbnailURL, LargeURL => TALK TO SAURIN ON HOW TO GENERATE URL
            */
 
+            var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+
             DataTable dt = new DataTable();
 
-            var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-            string query = "select ItemID, Lane, Slot, Start, livedate, BranchCode, StockNo, VIN, VehicleYear, VehicleMake, " +
-                                " VehicleModel, Transmission, RunAndDrive, OdoBrand, Odometer, PrimaryDamage, SecondaryDamage, " +
-                                " VehicleTitle, LossType, SaleDocument " +
-                           " from NonDDRStock where stockno not in " +
-                           " (select stocknumber from Stock)";
-
-            SqlConnection con = new SqlConnection(connection);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
-                        
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            
-            da.Fill(dt);
-            con.Close();
-            da.Dispose();
-
-            /*foreach (DataRow dr in dt.Rows)
+            using (SqlConnection con = new SqlConnection(connection))
             {
-                vehicleList.Add(dr);
-            }*/
+                using (SqlCommand cmd = new SqlCommand("dyndata.dbo.SP_PUSHDATA",con))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        da.Fill(dt);
+                    }
+
+                }
+            }
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -107,6 +101,7 @@ namespace DynData.LKQ
                     Lane = dt.Rows[i]["Lane"].ToString(),
                     Slot = dt.Rows[i]["Slot"].ToString(),
                     Start = dt.Rows[i]["Start"].ToString(),
+                    AuctionDate = DateTimeOffset.Parse(dt.Rows[i]["livedate"].ToString()),
                     //AuctionDate = new DateTimeOffset(System.DateTime.Now),
                     BranchCode = Convert.ToInt32(dt.Rows[i]["BranchCode"]),
                     StockNo = dt.Rows[i]["StockNo"].ToString(),
@@ -157,7 +152,7 @@ namespace DynData.LKQ
 
             var request = new VehicleUploadRequest() { VehicleInformationList = vehicleList.ToArray(), UserRequestInfo = User };       
             var response = Client.UploadVehicleInformation(request);    //NOTE: it's erroring out.
-
+            
         }
 
         private void GetBranchList()
