@@ -25,6 +25,7 @@ namespace DynData.DDRAuction {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.CurrentBidRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.GetStockInfoRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.VehicleInterchangeInfoRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.VehicleUploadRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.GetBranchListRequest))]
     public partial class UserRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -376,6 +377,30 @@ namespace DynData.DDRAuction {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VehicleUploadRequest", Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entiti" +
+        "es")]
+    [System.SerializableAttribute()]
+    public partial class VehicleUploadRequest : DynData.DDRAuction.UserRequest {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DynData.DDRAuction.VehicleInformationDto[] VehicleInformationListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DynData.DDRAuction.VehicleInformationDto[] VehicleInformationList {
+            get {
+                return this.VehicleInformationListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VehicleInformationListField, value) != true)) {
+                    this.VehicleInformationListField = value;
+                    this.RaisePropertyChanged("VehicleInformationList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="GetBranchListRequest", Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entiti" +
         "es")]
     [System.SerializableAttribute()]
@@ -535,6 +560,436 @@ namespace DynData.DDRAuction {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VehicleInformationDto", Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entiti" +
+        "es")]
+    [System.SerializableAttribute()]
+    public partial class VehicleInformationDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTimeOffset AuctionDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BranchCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExtraField1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExtraField2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExtraField3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ItemIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LargeURLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LossTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OdoBrandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OdometerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrimaryDamageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RunAndDriveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SaleDocumentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondaryDamageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SlotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StartField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StockNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThumbnailURLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TransmissionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VINField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VehicleMakeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VehicleModelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VehicleTitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VehicleYearField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTimeOffset AuctionDate {
+            get {
+                return this.AuctionDateField;
+            }
+            set {
+                if ((this.AuctionDateField.Equals(value) != true)) {
+                    this.AuctionDateField = value;
+                    this.RaisePropertyChanged("AuctionDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BranchCode {
+            get {
+                return this.BranchCodeField;
+            }
+            set {
+                if ((this.BranchCodeField.Equals(value) != true)) {
+                    this.BranchCodeField = value;
+                    this.RaisePropertyChanged("BranchCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExtraField1 {
+            get {
+                return this.ExtraField1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtraField1Field, value) != true)) {
+                    this.ExtraField1Field = value;
+                    this.RaisePropertyChanged("ExtraField1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExtraField2 {
+            get {
+                return this.ExtraField2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtraField2Field, value) != true)) {
+                    this.ExtraField2Field = value;
+                    this.RaisePropertyChanged("ExtraField2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExtraField3 {
+            get {
+                return this.ExtraField3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtraField3Field, value) != true)) {
+                    this.ExtraField3Field = value;
+                    this.RaisePropertyChanged("ExtraField3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ItemID {
+            get {
+                return this.ItemIDField;
+            }
+            set {
+                if ((this.ItemIDField.Equals(value) != true)) {
+                    this.ItemIDField = value;
+                    this.RaisePropertyChanged("ItemID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Lane {
+            get {
+                return this.LaneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LaneField, value) != true)) {
+                    this.LaneField = value;
+                    this.RaisePropertyChanged("Lane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LargeURL {
+            get {
+                return this.LargeURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LargeURLField, value) != true)) {
+                    this.LargeURLField = value;
+                    this.RaisePropertyChanged("LargeURL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LossType {
+            get {
+                return this.LossTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LossTypeField, value) != true)) {
+                    this.LossTypeField = value;
+                    this.RaisePropertyChanged("LossType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OdoBrand {
+            get {
+                return this.OdoBrandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OdoBrandField, value) != true)) {
+                    this.OdoBrandField = value;
+                    this.RaisePropertyChanged("OdoBrand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Odometer {
+            get {
+                return this.OdometerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OdometerField, value) != true)) {
+                    this.OdometerField = value;
+                    this.RaisePropertyChanged("Odometer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PrimaryDamage {
+            get {
+                return this.PrimaryDamageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrimaryDamageField, value) != true)) {
+                    this.PrimaryDamageField = value;
+                    this.RaisePropertyChanged("PrimaryDamage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RunAndDrive {
+            get {
+                return this.RunAndDriveField;
+            }
+            set {
+                if ((this.RunAndDriveField.Equals(value) != true)) {
+                    this.RunAndDriveField = value;
+                    this.RaisePropertyChanged("RunAndDrive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SaleDocument {
+            get {
+                return this.SaleDocumentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SaleDocumentField, value) != true)) {
+                    this.SaleDocumentField = value;
+                    this.RaisePropertyChanged("SaleDocument");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondaryDamage {
+            get {
+                return this.SecondaryDamageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondaryDamageField, value) != true)) {
+                    this.SecondaryDamageField = value;
+                    this.RaisePropertyChanged("SecondaryDamage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Slot {
+            get {
+                return this.SlotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SlotField, value) != true)) {
+                    this.SlotField = value;
+                    this.RaisePropertyChanged("Slot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Start {
+            get {
+                return this.StartField;
+            }
+            set {
+                if ((this.StartField.Equals(value) != true)) {
+                    this.StartField = value;
+                    this.RaisePropertyChanged("Start");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StockNo {
+            get {
+                return this.StockNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StockNoField, value) != true)) {
+                    this.StockNoField = value;
+                    this.RaisePropertyChanged("StockNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ThumbnailURL {
+            get {
+                return this.ThumbnailURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThumbnailURLField, value) != true)) {
+                    this.ThumbnailURLField = value;
+                    this.RaisePropertyChanged("ThumbnailURL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Transmission {
+            get {
+                return this.TransmissionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TransmissionField, value) != true)) {
+                    this.TransmissionField = value;
+                    this.RaisePropertyChanged("Transmission");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VIN {
+            get {
+                return this.VINField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VINField, value) != true)) {
+                    this.VINField = value;
+                    this.RaisePropertyChanged("VIN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VehicleMake {
+            get {
+                return this.VehicleMakeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VehicleMakeField, value) != true)) {
+                    this.VehicleMakeField = value;
+                    this.RaisePropertyChanged("VehicleMake");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VehicleModel {
+            get {
+                return this.VehicleModelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VehicleModelField, value) != true)) {
+                    this.VehicleModelField = value;
+                    this.RaisePropertyChanged("VehicleModel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VehicleTitle {
+            get {
+                return this.VehicleTitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VehicleTitleField, value) != true)) {
+                    this.VehicleTitleField = value;
+                    this.RaisePropertyChanged("VehicleTitle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VehicleYear {
+            get {
+                return this.VehicleYearField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VehicleYearField, value) != true)) {
+                    this.VehicleYearField = value;
+                    this.RaisePropertyChanged("VehicleYear");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceResult", Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithArrayOfBranchLocationsByPartner))]
@@ -547,6 +1002,7 @@ namespace DynData.DDRAuction {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithArrayOfVehicleInformation))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithArrayOfBuyItNowStock))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithInterchangeInfoResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithInterchangeStatus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithArrayOfBranchCodesByPartner))]
     public partial class ServiceResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -823,6 +1279,29 @@ namespace DynData.DDRAuction {
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public DynData.DDRAuction.InterchangeInfoResult RequestedData {
+            get {
+                return this.RequestedDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RequestedDataField, value) != true)) {
+                    this.RequestedDataField = value;
+                    this.RaisePropertyChanged("RequestedData");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResultWithInterchangeStatus", Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity")]
+    [System.SerializableAttribute()]
+    public partial class ResultWithInterchangeStatus : DynData.DDRAuction.ServiceResult {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DynData.DDRAuction.InterchangeStatus RequestedDataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DynData.DDRAuction.InterchangeStatus RequestedData {
             get {
                 return this.RequestedDataField;
             }
@@ -3164,6 +3643,52 @@ namespace DynData.DDRAuction {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InterchangeStatus", Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entiti" +
+        "es")]
+    [System.SerializableAttribute()]
+    public partial class InterchangeStatus : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="LKQCorp.LKQIntegrationService", ConfigurationName="DDRAuction.Auction")]
     public interface Auction {
@@ -3207,6 +3732,9 @@ namespace DynData.DDRAuction {
         
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVin", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVinResponse")]
         DynData.DDRAuction.ResultWithInterchangeInfoResult GetInterchangeByVin(DynData.DDRAuction.VehicleInterchangeInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformation", ReplyAction="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformationResponse")]
+        DynData.DDRAuction.ResultWithInterchangeStatus UploadVehicleInformation(DynData.DDRAuction.VehicleUploadRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3286,6 +3814,10 @@ namespace DynData.DDRAuction {
         
         public DynData.DDRAuction.ResultWithInterchangeInfoResult GetInterchangeByVin(DynData.DDRAuction.VehicleInterchangeInfoRequest request) {
             return base.Channel.GetInterchangeByVin(request);
+        }
+        
+        public DynData.DDRAuction.ResultWithInterchangeStatus UploadVehicleInformation(DynData.DDRAuction.VehicleUploadRequest request) {
+            return base.Channel.UploadVehicleInformation(request);
         }
     }
 }

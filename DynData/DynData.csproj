@@ -122,6 +122,9 @@
     <None Include="Service References\DDRAuction\DynData.DDRAuction.ResultWithInterchangeInfoResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\DDRAuction\DynData.DDRAuction.ResultWithInterchangeStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\DDRAuction\DynData.DDRAuction.ResultWithStockNumberRecentBid.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

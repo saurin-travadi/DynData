@@ -196,4 +196,21 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ResultWithInterchangeInfoResult" nillable="true" type="tns:ResultWithInterchangeInfoResult" />
+  <xs:complexType name="ResultWithInterchangeStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InterchangeStatus" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="RequestedData" nillable="true" type="q13:InterchangeStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithInterchangeStatus" nillable="true" type="tns:ResultWithInterchangeStatus" />
 </xs:schema>

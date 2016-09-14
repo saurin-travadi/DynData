@@ -89,6 +89,12 @@
   <wsdl:message name="Auction_GetInterchangeByVin_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetInterchangeByVinResponse" />
   </wsdl:message>
+  <wsdl:message name="Auction_UploadVehicleInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadVehicleInformation" />
+  </wsdl:message>
+  <wsdl:message name="Auction_UploadVehicleInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadVehicleInformationResponse" />
+  </wsdl:message>
   <wsdl:portType name="Auction">
     <wsdl:operation name="GetBranchList">
       <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBranchList" message="tns:Auction_GetBranchList_InputMessage" />
@@ -141,6 +147,10 @@
     <wsdl:operation name="GetInterchangeByVin">
       <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVin" message="tns:Auction_GetInterchangeByVin_InputMessage" />
       <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVinResponse" message="tns:Auction_GetInterchangeByVin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadVehicleInformation">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformation" message="tns:Auction_UploadVehicleInformation_InputMessage" />
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformationResponse" message="tns:Auction_UploadVehicleInformation_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

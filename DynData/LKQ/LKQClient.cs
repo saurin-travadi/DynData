@@ -32,6 +32,7 @@ namespace DynData.LKQ
         public DateTime AuctionDate { get; set; }
         public string StockNum { get; set; }
     }
+
     public class LKQClient
     {
         public Guid VerificationCode { get; set; }
@@ -58,6 +59,51 @@ namespace DynData.LKQ
             GetBranchList();
             GetAuctionDates();
             GetStockList();
+        }
+
+        public void PushData()
+        {
+            var vehicleList = new List<VehicleInformationDto>();
+
+            //Get a list of non DDR Stock from database
+            //Create a stroed proc to return datatable, loop thru it and populate vehicleList. See sample below
+
+            /*
+            ItemID, Lane, Slot, Start, AuctionDate, BranchCode, StockNo, VIN, VehicleYear, VehicleMake, VehicleModel, Transmission, RunAndDrive, 
+            OdoBrand, Odometer, PrimaryDamage, SecondaryDamage, VehicleTitle, LossType, SaleDocument, 
+            
+            ThumbnailURL, LargeURL => TALK TO SAURIN ON HOW TO GENERATE URL
+            */
+
+            vehicleList.Add(new VehicleInformationDto()
+            {
+                ItemID = 1,
+                Lane = "a",
+                Slot = "1",
+                Start = 1,
+                AuctionDate = new DateTimeOffset(System.DateTime.Now),
+                BranchCode = 151,
+                StockNo = "12345678",
+                VIN = "1FAHP56S72A241609",
+                VehicleYear = "2002",
+                VehicleMake = "Ford",
+                VehicleModel = "Focus",
+                Transmission = "AT",
+                RunAndDrive = 1,
+                OdoBrand = "actual",
+                Odometer = "10000",
+                PrimaryDamage = "Front End",
+                SecondaryDamage = "Front End",
+                VehicleTitle = "salvage",
+                LossType = "Fire",
+                SaleDocument = "clear",
+                ThumbnailURL = "",      //don't populate with values in DB
+                LargeURL = ""
+            });
+
+            var request = new VehicleUploadRequest() { VehicleInformationList = vehicleList.ToArray(), UserRequestInfo = User };       
+            var response = Client.UploadVehicleInformation(request);    //NOTE: it's erroring out.
+
         }
 
         private void GetBranchList()

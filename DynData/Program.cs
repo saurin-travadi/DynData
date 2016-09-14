@@ -10,7 +10,8 @@ namespace DynData
         static void Main(string[] args)
         {
             //new LKQ.LKQClient().GetData();
-            new IAA.IAAClient().GetData();
+            //new IAA.IAAClient().GetData();
+            new LKQ.LKQClient().PushData();
         }
 
         

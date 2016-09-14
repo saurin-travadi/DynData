@@ -185,4 +185,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UploadVehicleInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" minOccurs="0" name="request" nillable="true" type="q27:VehicleUploadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadVehicleInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="UploadVehicleInformationResult" nillable="true" type="q28:ResultWithInterchangeStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -381,4 +381,56 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Interchange" nillable="true" type="tns:Interchange" />
+  <xs:complexType name="VehicleUploadRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q21:UserRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VehicleInformationList" nillable="true" type="tns:ArrayOfVehicleInformationDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VehicleUploadRequest" nillable="true" type="tns:VehicleUploadRequest" />
+  <xs:complexType name="ArrayOfVehicleInformationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleInformationDto" nillable="true" type="tns:VehicleInformationDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleInformationDto" nillable="true" type="tns:ArrayOfVehicleInformationDto" />
+  <xs:complexType name="VehicleInformationDto">
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AuctionDate" type="q22:DateTimeOffset" />
+      <xs:element minOccurs="0" name="BranchCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtraField1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtraField2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtraField3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="Lane" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LargeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LossType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OdoBrand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Odometer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryDamage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RunAndDrive" type="xs:int" />
+      <xs:element minOccurs="0" name="SaleDocument" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryDamage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Slot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Start" type="xs:int" />
+      <xs:element minOccurs="0" name="StockNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThumbnailURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transmission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleMake" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleYear" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformationDto" nillable="true" type="tns:VehicleInformationDto" />
+  <xs:complexType name="InterchangeStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InterchangeStatus" nillable="true" type="tns:InterchangeStatus" />
 </xs:schema>
