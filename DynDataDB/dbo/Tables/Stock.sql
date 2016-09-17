@@ -7,7 +7,14 @@
 );
 
 
+
+
 GO
 CREATE UNIQUE NONCLUSTERED INDEX [PK_Stock]
     ON [dbo].[Stock]([StockID] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_Stock_StockNumber]
+    ON [dbo].[Stock]([StockNumber] ASC);
 

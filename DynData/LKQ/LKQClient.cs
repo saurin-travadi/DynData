@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using FastMember;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace DynData.LKQ
 {
@@ -129,39 +130,40 @@ namespace DynData.LKQ
                     if (!dt.Rows[i]["livedate"].ToString().ToLower().Equals("tbd"))
                         vehicle.AuctionDate = DateTimeOffset.Parse(dt.Rows[i]["livedate"].ToString());
 
-                    //from database dt.Rows[i]["ThumbnailURL"].ToString() = https://vis.iaai.com/resizer?imageKeys=18200145~SID~B732~S1~I1~RW1280~H960~TH0&height=240&width=320
-                    //replace vis.iaai.com with cvis.iaai.com
-                    //replace ~RW1280~H960~TH0 with empty string
-
-                    //Make Large URL 
-                    //replace height=240 with height=480
-                    //replace width=320 with width=640
-                    //e.g. https://cvis.iaai.com/resizer?imageKeys=10419534~SID~B114~S0~I1&height=480&width=640
-
-                    //Make Thumbnail URL 
-                    //replace resizer with thumbnail
-                    //replace height=240 with empty string
-                    //replace width=320 with empty string
-                    //e.g. https://cvis.iaai.com/thumbnail?imageKeys=10419534~SID~B114~S0~I1
-
-                    //Now loop 1 to 10
-                    //and replace ~I1 with ~I<index of loop>
-
-                    vehicle.VehicleInformationImage = new VehicleInformationImage[10];
-                    for (int image = 1; image <= 10; image++)
+                    var dbThumbURL = dt.Rows[i]["ThumbnailURL"].ToString();
+                    if (dbThumbURL != "")
                     {
-                        vehicle.VehicleInformationImage[image] = new VehicleInformationImage() { ThumbnailURL = "", LargeURL = "" };
-                    }
+                        var reg = new Regex("~R(.+?)TH0");
+                        var match = reg.Match(dbThumbURL);
+                        if (match.Success)
+                            dbThumbURL = dbThumbURL.Replace(match.Value, "");
 
+                        dbThumbURL = dbThumbURL.Replace("vis.iaai.com", "cvis.iaai.com");
+                        vehicle.VehicleInformationImage = new VehicleInformationImage[10];
+                        for (int image = 1; image <= 10; image++)
+                        {
+                            var large = dbThumbURL.Replace("height=240", "height=480").Replace("width=320", "width=640").Replace("~I1","~I"+image.ToString());
+                            var thumb = dbThumbURL.Replace("resizer", "thumbnail").Replace("&height=240&width=320", "").Replace("~I1", "~I" + image.ToString());
+                            vehicle.VehicleInformationImage[image-1] = new VehicleInformationImage() { ThumbnailURL = thumb, LargeURL = large.Substring(0,75) };
+                        }
+                    }
                     vehicleList.Add(vehicle);
                 }
 
-                var request = new VehicleUploadRequest() { VehicleInformationList = vehicleList.ToArray(), UserRequestInfo = User };
-                var response = Client.UploadVehicleInformation(request);
-                if (!response.WasSuccessful)
+                clsLog.LogInfo("PushData - ready to push " + vehicleList.Count + " records to remote");
+
+                var index = 0;
+                do
                 {
-                    clsLog.LogInfo("PushData - didn't push data to remote");
-                }
+                    var request = new VehicleUploadRequest() { VehicleInformationList = vehicleList.Skip(index).Take(1).ToArray(), UserRequestInfo = User };
+                    var response = Client.UploadVehicleInformation(request);
+                    if (!response.WasSuccessful)
+                    {
+                        clsLog.LogInfo("PushData - Error out while pushing data to remote from " + index.ToString());
+                    }
+                    index += 499;
+                } while (index <= vehicleList.Count);
+
             }
             catch (Exception ex)
             {

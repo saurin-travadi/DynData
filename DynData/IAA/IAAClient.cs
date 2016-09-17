@@ -143,7 +143,7 @@ namespace DynData.IAA
                 if (!bResponseEmpty)
                 {
                     System.Threading.Thread.Sleep(1000);
-                    GetStockList(search, start + CountPerCall - 1);
+                    GetStockList(search, start + CountPerCall);
                 }
             }
             catch (Exception ex)
