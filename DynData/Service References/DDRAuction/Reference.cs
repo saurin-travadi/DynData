@@ -590,9 +590,6 @@ namespace DynData.DDRAuction {
         private string LaneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LargeURLField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LossTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -605,9 +602,8 @@ namespace DynData.DDRAuction {
         private string PrimaryDamageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        //private int RunAndDriveField;
         private string RunAndDriveField;
-
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SaleDocumentField;
         
@@ -618,20 +614,19 @@ namespace DynData.DDRAuction {
         private string SlotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        //private int StartField;
         private string StartField;
-
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StockNoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThumbnailURLField;
+        private string StockNoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TransmissionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VINField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DynData.DDRAuction.VehicleInformationImage[] VehicleInformationImageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VehicleMakeField;
@@ -747,19 +742,6 @@ namespace DynData.DDRAuction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LargeURL {
-            get {
-                return this.LargeURLField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LargeURLField, value) != true)) {
-                    this.LargeURLField = value;
-                    this.RaisePropertyChanged("LargeURL");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string LossType {
             get {
                 return this.LossTypeField;
@@ -812,34 +794,18 @@ namespace DynData.DDRAuction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        /*public int RunAndDrive {
+        public string RunAndDrive {
             get {
                 return this.RunAndDriveField;
             }
             set {
-                if ((this.RunAndDriveField.Equals(value) != true)) {
-                    this.RunAndDriveField = value;
-                    this.RaisePropertyChanged("RunAndDrive");
-                }
-            }
-        }*/
-
-        public string RunAndDrive
-        {
-            get
-            {
-                return this.RunAndDriveField;
-            }
-            set
-            {
-                if ((object.ReferenceEquals(this.RunAndDriveField, value) != true))
-                {
+                if ((object.ReferenceEquals(this.RunAndDriveField, value) != true)) {
                     this.RunAndDriveField = value;
                     this.RaisePropertyChanged("RunAndDrive");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string SaleDocument {
             get {
@@ -880,34 +846,18 @@ namespace DynData.DDRAuction {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        /*public int Start {
+        public string Start {
             get {
                 return this.StartField;
             }
             set {
-                if ((this.StartField.Equals(value) != true)) {
-                    this.StartField = value;
-                    this.RaisePropertyChanged("Start");
-                }
-            }
-        }*/
-
-        public string Start
-        {
-            get
-            {
-                return this.StartField;
-            }
-            set
-            {
-                if ((object.ReferenceEquals(this.StartField, value) != true))
-                {
+                if ((object.ReferenceEquals(this.StartField, value) != true)) {
                     this.StartField = value;
                     this.RaisePropertyChanged("Start");
                 }
             }
         }
-
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string StockNo {
             get {
@@ -917,19 +867,6 @@ namespace DynData.DDRAuction {
                 if ((object.ReferenceEquals(this.StockNoField, value) != true)) {
                     this.StockNoField = value;
                     this.RaisePropertyChanged("StockNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ThumbnailURL {
-            get {
-                return this.ThumbnailURLField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThumbnailURLField, value) != true)) {
-                    this.ThumbnailURLField = value;
-                    this.RaisePropertyChanged("ThumbnailURL");
                 }
             }
         }
@@ -956,6 +893,19 @@ namespace DynData.DDRAuction {
                 if ((object.ReferenceEquals(this.VINField, value) != true)) {
                     this.VINField = value;
                     this.RaisePropertyChanged("VIN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DynData.DDRAuction.VehicleInformationImage[] VehicleInformationImage {
+            get {
+                return this.VehicleInformationImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VehicleInformationImageField, value) != true)) {
+                    this.VehicleInformationImageField = value;
+                    this.RaisePropertyChanged("VehicleInformationImage");
                 }
             }
         }
@@ -1024,6 +974,68 @@ namespace DynData.DDRAuction {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VehicleInformationImage", Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entiti" +
+        "es")]
+    [System.SerializableAttribute()]
+    public partial class VehicleInformationImage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LargeURLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThumbnailURLField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LargeURL {
+            get {
+                return this.LargeURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LargeURLField, value) != true)) {
+                    this.LargeURLField = value;
+                    this.RaisePropertyChanged("LargeURL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ThumbnailURL {
+            get {
+                return this.ThumbnailURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThumbnailURLField, value) != true)) {
+                    this.ThumbnailURLField = value;
+                    this.RaisePropertyChanged("ThumbnailURL");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceResult", Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithArrayOfBranchLocationsByPartner))]
@@ -1036,7 +1048,6 @@ namespace DynData.DDRAuction {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithArrayOfVehicleInformation))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithArrayOfBuyItNowStock))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithInterchangeInfoResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithInterchangeStatus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(DynData.DDRAuction.ResultWithArrayOfBranchCodesByPartner))]
     public partial class ServiceResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1313,29 +1324,6 @@ namespace DynData.DDRAuction {
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public DynData.DDRAuction.InterchangeInfoResult RequestedData {
-            get {
-                return this.RequestedDataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RequestedDataField, value) != true)) {
-                    this.RequestedDataField = value;
-                    this.RaisePropertyChanged("RequestedData");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResultWithInterchangeStatus", Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity")]
-    [System.SerializableAttribute()]
-    public partial class ResultWithInterchangeStatus : DynData.DDRAuction.ServiceResult {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DynData.DDRAuction.InterchangeStatus RequestedDataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DynData.DDRAuction.InterchangeStatus RequestedData {
             get {
                 return this.RequestedDataField;
             }
@@ -3677,52 +3665,6 @@ namespace DynData.DDRAuction {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InterchangeStatus", Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entiti" +
-        "es")]
-    [System.SerializableAttribute()]
-    public partial class InterchangeStatus : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StatusField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="LKQCorp.LKQIntegrationService", ConfigurationName="DDRAuction.Auction")]
     public interface Auction {
@@ -3730,45 +3672,88 @@ namespace DynData.DDRAuction {
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetBranchList", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetBranchListResponse")]
         DynData.DDRAuction.ResultWithArrayOfBranchCodesByPartner GetBranchList(DynData.DDRAuction.GetBranchListRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetBranchList", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetBranchListResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBranchCodesByPartner> GetBranchListAsync(DynData.DDRAuction.GetBranchListRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetBranchInfo", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetBranchInfoResponse")]
         DynData.DDRAuction.ResultWithArrayOfBranchLocationsByPartner GetBranchInfo(DynData.DDRAuction.GetBranchInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetBranchInfo", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetBranchInfoResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBranchLocationsByPartner> GetBranchInfoAsync(DynData.DDRAuction.GetBranchInfoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranch", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranchResponse")]
         DynData.DDRAuction.ResultWithArrayOfBranchAuction GetAuctionDatesByBranch(DynData.DDRAuction.GetBranchAuctionsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranch", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranchResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBranchAuction> GetAuctionDatesByBranchAsync(DynData.DDRAuction.GetBranchAuctionsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranch", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranchResponse")]
         DynData.DDRAuction.ResultWithArrayOfBranchAuction GetUtcAuctionDateByBranch(DynData.DDRAuction.GetBranchAuctionsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranch", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranchResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBranchAuction> GetUtcAuctionDateByBranchAsync(DynData.DDRAuction.GetBranchAuctionsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranch", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranchResponse")]
         DynData.DDRAuction.ResultWithArrayOfstring GetStockListByAuctionDateByBranch(DynData.DDRAuction.GetStockListByAuctionDateByBranchRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranch", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranchResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfstring> GetStockListByAuctionDateByBranchAsync(DynData.DDRAuction.GetStockListByAuctionDateByBranchRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranch", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranchRes" +
             "ponse")]
         DynData.DDRAuction.ResultWithArrayOfstring GetChangedStockListByAuctionDateByBranch(DynData.DDRAuction.GetStockListByAuctionDateByBranchRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranch", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranchRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfstring> GetChangedStockListByAuctionDateByBranchAsync(DynData.DDRAuction.GetStockListByAuctionDateByBranchRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccess", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccessResponse")]
         DynData.DDRAuction.ResultWithArrayOfStockNumbersByBranchCode GetChangedStockListbyLastAccess(DynData.DDRAuction.PartnerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccess", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccessResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfStockNumbersByBranchCode> GetChangedStockListbyLastAccessAsync(DynData.DDRAuction.PartnerRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBids", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBidsResponse")]
         DynData.DDRAuction.ResultWithArrayOfRecentBidsByBranchCode GetStocksRecentBids(DynData.DDRAuction.PartnerRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBids", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBidsResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfRecentBidsByBranchCode> GetStocksRecentBidsAsync(DynData.DDRAuction.PartnerRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBid", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBidResponse")]
         DynData.DDRAuction.ResultWithStockNumberRecentBid GetStockCurrentBid(DynData.DDRAuction.CurrentBidRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBid", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBidResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithStockNumberRecentBid> GetStockCurrentBidAsync(DynData.DDRAuction.CurrentBidRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetPartnerIds", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetPartnerIdsResponse")]
         DynData.DDRAuction.ResultWithArrayOfAuctionPartner GetPartnerIds(DynData.DDRAuction.UserRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetPartnerIds", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetPartnerIdsResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfAuctionPartner> GetPartnerIdsAsync(DynData.DDRAuction.UserRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetStockInfo", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetStockInfoResponse")]
         DynData.DDRAuction.ResultWithArrayOfVehicleInformation GetStockInfo(DynData.DDRAuction.GetStockInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetStockInfo", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetStockInfoResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfVehicleInformation> GetStockInfoAsync(DynData.DDRAuction.GetStockInfoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocks", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocksResponse")]
         DynData.DDRAuction.ResultWithArrayOfBuyItNowStock GetBuyItNowStocks(DynData.DDRAuction.PartnerRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocks", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocksResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBuyItNowStock> GetBuyItNowStocksAsync(DynData.DDRAuction.PartnerRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVin", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVinResponse")]
         DynData.DDRAuction.ResultWithInterchangeInfoResult GetInterchangeByVin(DynData.DDRAuction.VehicleInterchangeInfoRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVin", ReplyAction="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVinResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithInterchangeInfoResult> GetInterchangeByVinAsync(DynData.DDRAuction.VehicleInterchangeInfoRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformation", ReplyAction="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformationResponse")]
-        DynData.DDRAuction.ResultWithInterchangeStatus UploadVehicleInformation(DynData.DDRAuction.VehicleUploadRequest request);
+        DynData.DDRAuction.ServiceResult UploadVehicleInformation(DynData.DDRAuction.VehicleUploadRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformation", ReplyAction="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformationResponse")]
+        System.Threading.Tasks.Task<DynData.DDRAuction.ServiceResult> UploadVehicleInformationAsync(DynData.DDRAuction.VehicleUploadRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3802,56 +3787,112 @@ namespace DynData.DDRAuction {
             return base.Channel.GetBranchList(request);
         }
         
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBranchCodesByPartner> GetBranchListAsync(DynData.DDRAuction.GetBranchListRequest request) {
+            return base.Channel.GetBranchListAsync(request);
+        }
+        
         public DynData.DDRAuction.ResultWithArrayOfBranchLocationsByPartner GetBranchInfo(DynData.DDRAuction.GetBranchInfoRequest request) {
             return base.Channel.GetBranchInfo(request);
+        }
+        
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBranchLocationsByPartner> GetBranchInfoAsync(DynData.DDRAuction.GetBranchInfoRequest request) {
+            return base.Channel.GetBranchInfoAsync(request);
         }
         
         public DynData.DDRAuction.ResultWithArrayOfBranchAuction GetAuctionDatesByBranch(DynData.DDRAuction.GetBranchAuctionsRequest request) {
             return base.Channel.GetAuctionDatesByBranch(request);
         }
         
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBranchAuction> GetAuctionDatesByBranchAsync(DynData.DDRAuction.GetBranchAuctionsRequest request) {
+            return base.Channel.GetAuctionDatesByBranchAsync(request);
+        }
+        
         public DynData.DDRAuction.ResultWithArrayOfBranchAuction GetUtcAuctionDateByBranch(DynData.DDRAuction.GetBranchAuctionsRequest request) {
             return base.Channel.GetUtcAuctionDateByBranch(request);
+        }
+        
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBranchAuction> GetUtcAuctionDateByBranchAsync(DynData.DDRAuction.GetBranchAuctionsRequest request) {
+            return base.Channel.GetUtcAuctionDateByBranchAsync(request);
         }
         
         public DynData.DDRAuction.ResultWithArrayOfstring GetStockListByAuctionDateByBranch(DynData.DDRAuction.GetStockListByAuctionDateByBranchRequest request) {
             return base.Channel.GetStockListByAuctionDateByBranch(request);
         }
         
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfstring> GetStockListByAuctionDateByBranchAsync(DynData.DDRAuction.GetStockListByAuctionDateByBranchRequest request) {
+            return base.Channel.GetStockListByAuctionDateByBranchAsync(request);
+        }
+        
         public DynData.DDRAuction.ResultWithArrayOfstring GetChangedStockListByAuctionDateByBranch(DynData.DDRAuction.GetStockListByAuctionDateByBranchRequest request) {
             return base.Channel.GetChangedStockListByAuctionDateByBranch(request);
+        }
+        
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfstring> GetChangedStockListByAuctionDateByBranchAsync(DynData.DDRAuction.GetStockListByAuctionDateByBranchRequest request) {
+            return base.Channel.GetChangedStockListByAuctionDateByBranchAsync(request);
         }
         
         public DynData.DDRAuction.ResultWithArrayOfStockNumbersByBranchCode GetChangedStockListbyLastAccess(DynData.DDRAuction.PartnerRequest request) {
             return base.Channel.GetChangedStockListbyLastAccess(request);
         }
         
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfStockNumbersByBranchCode> GetChangedStockListbyLastAccessAsync(DynData.DDRAuction.PartnerRequest request) {
+            return base.Channel.GetChangedStockListbyLastAccessAsync(request);
+        }
+        
         public DynData.DDRAuction.ResultWithArrayOfRecentBidsByBranchCode GetStocksRecentBids(DynData.DDRAuction.PartnerRequest request) {
             return base.Channel.GetStocksRecentBids(request);
+        }
+        
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfRecentBidsByBranchCode> GetStocksRecentBidsAsync(DynData.DDRAuction.PartnerRequest request) {
+            return base.Channel.GetStocksRecentBidsAsync(request);
         }
         
         public DynData.DDRAuction.ResultWithStockNumberRecentBid GetStockCurrentBid(DynData.DDRAuction.CurrentBidRequest request) {
             return base.Channel.GetStockCurrentBid(request);
         }
         
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithStockNumberRecentBid> GetStockCurrentBidAsync(DynData.DDRAuction.CurrentBidRequest request) {
+            return base.Channel.GetStockCurrentBidAsync(request);
+        }
+        
         public DynData.DDRAuction.ResultWithArrayOfAuctionPartner GetPartnerIds(DynData.DDRAuction.UserRequest request) {
             return base.Channel.GetPartnerIds(request);
+        }
+        
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfAuctionPartner> GetPartnerIdsAsync(DynData.DDRAuction.UserRequest request) {
+            return base.Channel.GetPartnerIdsAsync(request);
         }
         
         public DynData.DDRAuction.ResultWithArrayOfVehicleInformation GetStockInfo(DynData.DDRAuction.GetStockInfoRequest request) {
             return base.Channel.GetStockInfo(request);
         }
         
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfVehicleInformation> GetStockInfoAsync(DynData.DDRAuction.GetStockInfoRequest request) {
+            return base.Channel.GetStockInfoAsync(request);
+        }
+        
         public DynData.DDRAuction.ResultWithArrayOfBuyItNowStock GetBuyItNowStocks(DynData.DDRAuction.PartnerRequest request) {
             return base.Channel.GetBuyItNowStocks(request);
+        }
+        
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithArrayOfBuyItNowStock> GetBuyItNowStocksAsync(DynData.DDRAuction.PartnerRequest request) {
+            return base.Channel.GetBuyItNowStocksAsync(request);
         }
         
         public DynData.DDRAuction.ResultWithInterchangeInfoResult GetInterchangeByVin(DynData.DDRAuction.VehicleInterchangeInfoRequest request) {
             return base.Channel.GetInterchangeByVin(request);
         }
         
-        public DynData.DDRAuction.ResultWithInterchangeStatus UploadVehicleInformation(DynData.DDRAuction.VehicleUploadRequest request) {
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ResultWithInterchangeInfoResult> GetInterchangeByVinAsync(DynData.DDRAuction.VehicleInterchangeInfoRequest request) {
+            return base.Channel.GetInterchangeByVinAsync(request);
+        }
+        
+        public DynData.DDRAuction.ServiceResult UploadVehicleInformation(DynData.DDRAuction.VehicleUploadRequest request) {
             return base.Channel.UploadVehicleInformation(request);
+        }
+        
+        public System.Threading.Tasks.Task<DynData.DDRAuction.ServiceResult> UploadVehicleInformationAsync(DynData.DDRAuction.VehicleUploadRequest request) {
+            return base.Channel.UploadVehicleInformationAsync(request);
         }
     }
 }

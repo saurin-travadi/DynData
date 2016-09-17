@@ -56,103 +56,117 @@ namespace DynData.LKQ
 
         public void GetData()
         {
+            clsLog.LogInfo("Getting BranchList");
             GetBranchList();
+
+            clsLog.LogInfo("Getting Auction Dates");
             GetAuctionDates();
+
+            clsLog.LogInfo("Getting StockList");
             GetStockList();
         }
 
         public void PushData()
         {
-            var vehicleList = new List<VehicleInformationDto>();
+            clsLog.LogInfo("Pushing Stocks to LKQ");
 
-            //Get a list of non DDR Stock from database
-            //Create a stroed proc to return datatable, loop thru it and populate vehicleList. See sample below
-
-            /*
-           ItemID, Lane, Slot, Start, AuctionDate, BranchCode, StockNo, VIN, VehicleYear, VehicleMake, VehicleModel, Transmission, 
-           RunAndDrive, OdoBrand, Odometer, PrimaryDamage, SecondaryDamage, VehicleTitle, LossType, SaleDocument, 
-
-           ThumbnailURL, LargeURL => TALK TO SAURIN ON HOW TO GENERATE URL
-           */
-
-            var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-
-            DataTable dt = new DataTable();
-
-            using (SqlConnection con = new SqlConnection(connection))
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("dyndata.dbo.SP_PUSHDATA",con))
-                {
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                    {
+                var vehicleList = new List<VehicleInformationDto>();
 
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        da.Fill(dt);
+                //Get a list of non DDR Stock from database
+                //Create a stroed proc to return datatable, loop thru it and populate vehicleList. See sample below
+
+                /*
+               ItemID, Lane, Slot, Start, AuctionDate, BranchCode, StockNo, VIN, VehicleYear, VehicleMake, VehicleModel, Transmission, 
+               RunAndDrive, OdoBrand, Odometer, PrimaryDamage, SecondaryDamage, VehicleTitle, LossType, SaleDocument, 
+
+               ThumbnailURL, LargeURL => TALK TO SAURIN ON HOW TO GENERATE URL
+               */
+
+                var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+
+                DataTable dt = new DataTable();
+
+                using (SqlConnection con = new SqlConnection(connection))
+                {
+                    using (SqlCommand cmd = new SqlCommand("dyndata.dbo.SP_PUSHDATA", con))
+                    {
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            da.Fill(dt);
+                        }
+
+                    }
+                }
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    var vehicle = new VehicleInformationDto()
+                    {
+                        ItemID = Convert.ToInt32(dt.Rows[i]["ItemID"]),
+                        Lane = dt.Rows[i]["Lane"].ToString().Trim(),
+                        Slot = dt.Rows[i]["Slot"].ToString().Trim(),
+                        Start = dt.Rows[i]["Start"].ToString(),
+                        BranchCode = Convert.ToInt32(dt.Rows[i]["BranchCode"]),
+                        StockNo = dt.Rows[i]["StockNo"].ToString().Trim(),
+                        VIN = dt.Rows[i]["VIN"].ToString().Trim(),
+                        VehicleYear = dt.Rows[i]["VehicleYear"].ToString().Trim(),
+                        VehicleMake = dt.Rows[i]["VehicleMake"].ToString().Trim(),
+                        VehicleModel = dt.Rows[i]["VehicleModel"].ToString().Trim(),
+                        Transmission = dt.Rows[i]["Transmission"].ToString().Trim(),
+                        RunAndDrive = dt.Rows[i]["RunAndDrive"].ToString().Trim(),
+                        OdoBrand = dt.Rows[i]["OdoBrand"].ToString().Trim(),
+                        Odometer = dt.Rows[i]["Odometer"].ToString().Trim(),
+                        PrimaryDamage = dt.Rows[i]["PrimaryDamage"].ToString().Trim(),
+                        SecondaryDamage = dt.Rows[i]["SecondaryDamage"].ToString().Trim(),
+                        VehicleTitle = dt.Rows[i]["VehicleTitle"].ToString().Trim(),
+                        LossType = dt.Rows[i]["LossType"].ToString().Trim(),
+                        SaleDocument = dt.Rows[i]["SaleDocument"].ToString().Trim()
+                    };
+                    if (!dt.Rows[i]["livedate"].ToString().ToLower().Equals("tbd"))
+                        vehicle.AuctionDate = DateTimeOffset.Parse(dt.Rows[i]["livedate"].ToString());
+
+                    //from database dt.Rows[i]["ThumbnailURL"].ToString() = https://vis.iaai.com/resizer?imageKeys=18200145~SID~B732~S1~I1~RW1280~H960~TH0&height=240&width=320
+                    //replace vis.iaai.com with cvis.iaai.com
+                    //replace ~RW1280~H960~TH0 with empty string
+
+                    //Make Large URL 
+                    //replace height=240 with height=480
+                    //replace width=320 with width=640
+                    //e.g. https://cvis.iaai.com/resizer?imageKeys=10419534~SID~B114~S0~I1&height=480&width=640
+
+                    //Make Thumbnail URL 
+                    //replace resizer with thumbnail
+                    //replace height=240 with empty string
+                    //replace width=320 with empty string
+                    //e.g. https://cvis.iaai.com/thumbnail?imageKeys=10419534~SID~B114~S0~I1
+
+                    //Now loop 1 to 10
+                    //and replace ~I1 with ~I<index of loop>
+
+                    vehicle.VehicleInformationImage = new VehicleInformationImage[10];
+                    for (int image = 1; image <= 10; image++)
+                    {
+                        vehicle.VehicleInformationImage[image] = new VehicleInformationImage() { ThumbnailURL = "", LargeURL = "" };
                     }
 
+                    vehicleList.Add(vehicle);
+                }
+
+                var request = new VehicleUploadRequest() { VehicleInformationList = vehicleList.ToArray(), UserRequestInfo = User };
+                var response = Client.UploadVehicleInformation(request);
+                if (!response.WasSuccessful)
+                {
+                    clsLog.LogInfo("PushData - didn't push data to remote");
                 }
             }
-
-            for (int i = 0; i < dt.Rows.Count; i++)
+            catch (Exception ex)
             {
-                vehicleList.Add(new VehicleInformationDto()
-                {
-                    ItemID = Convert.ToInt32(dt.Rows[i]["ItemID"]),
-                    Lane = dt.Rows[i]["Lane"].ToString(),
-                    Slot = dt.Rows[i]["Slot"].ToString(),
-                    Start = dt.Rows[i]["Start"].ToString(),
-                    AuctionDate = DateTimeOffset.Parse(dt.Rows[i]["livedate"].ToString()),
-                    //AuctionDate = new DateTimeOffset(System.DateTime.Now),
-                    BranchCode = Convert.ToInt32(dt.Rows[i]["BranchCode"]),
-                    StockNo = dt.Rows[i]["StockNo"].ToString(),
-                    VIN = dt.Rows[i]["VIN"].ToString(),
-                    VehicleYear = dt.Rows[i]["VehicleYear"].ToString(),
-                    VehicleMake = dt.Rows[i]["VehicleMake"].ToString(),
-                    VehicleModel = dt.Rows[i]["VehicleModel"].ToString(),
-                    Transmission = dt.Rows[i]["Transmission"].ToString(),
-                    RunAndDrive = dt.Rows[i]["RunAndDrive"].ToString(),
-                    OdoBrand = dt.Rows[i]["OdoBrand"].ToString(),
-                    Odometer = dt.Rows[i]["Odometer"].ToString(),
-                    PrimaryDamage = dt.Rows[i]["PrimaryDamage"].ToString(),
-                    SecondaryDamage = dt.Rows[i]["SecondaryDamage"].ToString(),
-                    VehicleTitle = dt.Rows[i]["VehicleTitle"].ToString(),
-                    LossType = dt.Rows[i]["LossType"].ToString(),
-                    SaleDocument = dt.Rows[i]["SaleDocument"].ToString(),
-                    ThumbnailURL = "",      //don't populate with values in DB
-                    LargeURL = ""
-                });
+                clsLog.LogInfo("PushData - Error ocurred while pushing data to remote. Error " + ex.Message);
             }
-
-
-            /*vehicleList.Add(new VehicleInformationDto()
-            {
-                ItemID = 1,
-                Lane = "a",
-                Slot = "1",
-                Start = 1,
-                AuctionDate = new DateTimeOffset(System.DateTime.Now),
-                BranchCode = 151,
-                StockNo = "12345678",
-                VIN = "1FAHP56S72A241609",
-                VehicleYear = "2002",
-                VehicleMake = "Ford",
-                VehicleModel = "Focus",
-                Transmission = "AT",
-                RunAndDrive = 1,
-                OdoBrand = "actual",
-                Odometer = "10000",
-                PrimaryDamage = "Front End",
-                SecondaryDamage = "Front End",
-                VehicleTitle = "salvage",
-                LossType = "Fire",
-                SaleDocument = "clear",
-                ThumbnailURL = "",      //don't populate with values in DB
-                LargeURL = ""
-            });*/
-
-            var request = new VehicleUploadRequest() { VehicleInformationList = vehicleList.ToArray(), UserRequestInfo = User };       
-            var response = Client.UploadVehicleInformation(request);    //NOTE: it's erroring out.
-            
         }
 
         private void GetBranchList()

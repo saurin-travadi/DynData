@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DynData.DDRAuction;
 using System.Net;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
-using Newtonsoft.Json;
 
 namespace DynData.IAA
 {
@@ -27,12 +25,17 @@ namespace DynData.IAA
 
         public void GetData()
         {
+            clsLog.LogInfo("Getting AVIS stocks");
             GetStockList("AVIS", 1);
+
+            clsLog.LogInfo("Getting Enterprise stocks");
             GetStockList("ENTERPRISE", 1);
         }
 
         private void GetStockList(string search, int start)
         {
+            clsLog.LogInfo("Getting " + search + " stocks from " + start.ToString());
+
             try
             {
                 var queryString = string.Format("&keyword={0}&start={1}", search, start);

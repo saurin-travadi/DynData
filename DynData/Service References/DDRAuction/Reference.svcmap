@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="76f26eaa-ae9e-40eb-b5e2-2043e85d05aa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b54f786e-2d0e-46e9-b425-bc4f9b0dbba6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -21,15 +22,15 @@
     <MetadataSource Address="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Auction.xsd" MetadataType="Schema" ID="a382763b-6495-454c-bf53-96f31087225a" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd4" />
-    <MetadataFile FileName="Auction1.xsd" MetadataType="Schema" ID="8eed294b-244c-41c2-9540-72ddcb6db570" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd3" />
-    <MetadataFile FileName="Auction2.xsd" MetadataType="Schema" ID="34c700f6-982c-4db3-b3e0-ba9c83772e6a" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd2" />
-    <MetadataFile FileName="Auction3.xsd" MetadataType="Schema" ID="b1339f6f-ab48-4783-87af-8532a318d49d" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd1" />
-    <MetadataFile FileName="Auction4.xsd" MetadataType="Schema" ID="b1837476-79a8-455b-871e-e1f21962a9a3" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd0" />
-    <MetadataFile FileName="Auction.wsdl" MetadataType="Wsdl" ID="5c8daaed-1127-462f-968c-057c2e4caeed" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?WSDL" />
-    <MetadataFile FileName="Auction1.wsdl" MetadataType="Wsdl" ID="ac5cecb1-1b86-44f3-9fc0-2eeca9d85c72" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="Auction5.xsd" MetadataType="Schema" ID="7a6e0e5c-a4e1-4840-9ac9-04f639cfe430" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd6" />
-    <MetadataFile FileName="Auction6.xsd" MetadataType="Schema" ID="1d8b7185-63b2-4cb2-b8d2-62a12f1ff5d6" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd5" />
+    <MetadataFile FileName="Auction.xsd" MetadataType="Schema" ID="67991dfa-5975-484d-b543-cd28c7bab920" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd4" />
+    <MetadataFile FileName="Auction1.xsd" MetadataType="Schema" ID="a1d48632-42c5-4896-a0c6-510d907a0c46" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd3" />
+    <MetadataFile FileName="Auction2.xsd" MetadataType="Schema" ID="a1f10598-9264-4bbe-8b05-20a3602c7816" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd2" />
+    <MetadataFile FileName="Auction3.xsd" MetadataType="Schema" ID="0826c65e-ca74-4b15-83f1-a55ade428fce" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd1" />
+    <MetadataFile FileName="Auction4.xsd" MetadataType="Schema" ID="0e6cf777-3f40-4d68-8f95-979018bad926" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd0" />
+    <MetadataFile FileName="Auction.wsdl" MetadataType="Wsdl" ID="d063c657-8ccc-41ae-821a-5c22a09b6715" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?WSDL" />
+    <MetadataFile FileName="Auction1.wsdl" MetadataType="Wsdl" ID="a3c039e4-fc7f-42da-8392-c29ae503c24f" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Auction5.xsd" MetadataType="Schema" ID="76070624-bf22-45d8-8ee1-61d86b226894" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd6" />
+    <MetadataFile FileName="Auction6.xsd" MetadataType="Schema" ID="8c4a172f-8f6b-4c94-ab1a-bfd097785398" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Auction.svc?xsd=xsd5" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

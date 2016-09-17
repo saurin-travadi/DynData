@@ -406,20 +406,19 @@
       <xs:element minOccurs="0" name="ExtraField3" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ItemID" type="xs:int" />
       <xs:element minOccurs="0" name="Lane" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LargeURL" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LossType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OdoBrand" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Odometer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PrimaryDamage" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RunAndDrive" type="xs:int" />
+      <xs:element minOccurs="0" name="RunAndDrive" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SaleDocument" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SecondaryDamage" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Slot" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Start" type="xs:int" />
+      <xs:element minOccurs="0" name="Start" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="StockNo" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ThumbnailURL" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Transmission" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleInformationImage" nillable="true" type="tns:ArrayOfVehicleInformationImage" />
       <xs:element minOccurs="0" name="VehicleMake" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VehicleModel" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VehicleTitle" nillable="true" type="xs:string" />
@@ -427,10 +426,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="VehicleInformationDto" nillable="true" type="tns:VehicleInformationDto" />
-  <xs:complexType name="InterchangeStatus">
+  <xs:complexType name="ArrayOfVehicleInformationImage">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleInformationImage" nillable="true" type="tns:VehicleInformationImage" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="InterchangeStatus" nillable="true" type="tns:InterchangeStatus" />
+  <xs:element name="ArrayOfVehicleInformationImage" nillable="true" type="tns:ArrayOfVehicleInformationImage" />
+  <xs:complexType name="VehicleInformationImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LargeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThumbnailURL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformationImage" nillable="true" type="tns:VehicleInformationImage" />
 </xs:schema>

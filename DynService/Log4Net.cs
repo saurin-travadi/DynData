@@ -45,7 +45,7 @@ namespace Service
                 tw = TextWriter.Synchronized(File.AppendText(filePath));
                 tw.WriteLine(string.Format("{0} - {1} - {2}", DateTime.Now.ToString(), mode, Message));
             }
-            catch (Exception ex)
+            catch 
             {
                 retVal = false;
             }

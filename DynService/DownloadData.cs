@@ -69,11 +69,18 @@ namespace Service
 
                 //check next download date for Data & Image from config and run download
                 clsLog.LogInfo("Reading next run date and time ...");
-                if (IsNextRun()==1) 
-                {
+                if (IsNextRun("LKQGet") == 1)
                     new DynData.LKQ.LKQClient().GetData();
+
+                if (IsNextRun("IAAGet") == 1)
                     new DynData.IAA.IAAClient().GetData();
-                }
+
+                if (IsNextRun("LKQPush") == 1)
+                    new DynData.LKQ.LKQClient().PushData();
+
+
+                clsLog.LogInfo("Sleeping....");
+                
             }
             catch (Exception ex)
             {
@@ -81,11 +88,11 @@ namespace Service
             }
         }
 
-        private int IsNextRun()
+        private int IsNextRun(string job)
         {
             try
             {
-                var objRet = clsDB.funcExecuteSQLScalar("SP_NextJob", ConfigurationManager.ConnectionStrings["Connection"].ConnectionString);
+                var objRet = clsDB.funcExecuteSQLScalar("SP_NextJob '" + job + "'", ConfigurationManager.ConnectionStrings["Connection"].ConnectionString);
                 return Convert.ToInt16(objRet);
             }
             catch (Exception ex)

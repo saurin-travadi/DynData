@@ -195,7 +195,7 @@
   <xs:element name="UploadVehicleInformationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="UploadVehicleInformationResult" nillable="true" type="q28:ResultWithInterchangeStatus" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" minOccurs="0" name="UploadVehicleInformationResult" nillable="true" type="q28:ServiceResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

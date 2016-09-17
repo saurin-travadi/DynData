@@ -78,6 +78,8 @@
     <Build Include="dbo\Stored Procedures\SP_STOCK.sql" />
     <Build Include="Database Triggers\rds_deny_backups_trigger.sql" />
     <Build Include="dbo\Tables\Job.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PUSHDATA.sql" />
+    <Build Include="dbo\Stored Procedures\SP_NextJob.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SchemaComparison\DB2Project.scmp" />
