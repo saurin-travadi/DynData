@@ -22,8 +22,24 @@
     [VehicleTitle]    VARCHAR (50)  NULL,
     [VIN]             VARCHAR (17)  NULL,
     [VehicleYear]     VARCHAR (4)   NULL,
+    [modify_date]     DATETIME      CONSTRAINT [DF_NonDDRStock] DEFAULT (getdate()) NULL,
     CONSTRAINT [PK_NonDDRStock_] PRIMARY KEY CLUSTERED ([StockID] ASC, [StockNo] ASC)
 );
 
 
 
+
+
+
+GO
+create trigger trg_NonDDRStock on NonDDRStock
+after update
+as
+begin
+   set nocount on;
+
+   update t set modify_date=getdate()
+   from  NonDDRStock t 
+   inner join inserted i on t.StockID=i.StockID and t.StockNo=i.StockNo
+
+end

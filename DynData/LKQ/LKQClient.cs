@@ -193,6 +193,7 @@ namespace DynData.LKQ
                         branchDataTable.Load(reader);
                     }
 
+                    clsLog.LogInfo("GetBranchList - trying to save branch list, Records found " + branchDataTable.Rows.Count);
 
                     //and send it to DB. Merge this list with existing branch list
                     using (SqlConnection con = new SqlConnection(connection))
@@ -211,6 +212,9 @@ namespace DynData.LKQ
                             con.Close();
                         }
                     }
+
+                    clsLog.LogInfo("GetBranchList - saved branch list");
+
                 }
                 catch (Exception ex)
                 {
@@ -234,7 +238,6 @@ namespace DynData.LKQ
                 if (response.WasSuccessful && response.RequestedData != null)
                 {
                     branch.Auctions = new List<BranchAuction>(response.RequestedData.ToList().ConvertAll(c => new BranchAuction() { AuctionDate = c.AuctionDate.DateTime }).ToList());
-
                 }
                 else
                 {
@@ -258,6 +261,8 @@ namespace DynData.LKQ
                     branchDataTable.Load(reader);
                 }
 
+                clsLog.LogInfo("GetAuctionDates - trying to save auction dates, Records - " + branchDataTable.Rows.Count);
+
                 using (SqlConnection con = new SqlConnection(connection))
                 {
                     using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
@@ -279,6 +284,9 @@ namespace DynData.LKQ
                         con.Close();
                     }
                 }
+
+                clsLog.LogInfo("GetAuctionDates - saved auction dates, Records saved - " + branchDataTable.Rows.Count);
+
             }
             catch (Exception ex)
             {
@@ -313,6 +321,7 @@ namespace DynData.LKQ
             });
 
 
+
             try
             {
                 var connection = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
@@ -329,6 +338,8 @@ namespace DynData.LKQ
                 {
                     branchDataTable.Load(reader);
                 }
+
+                clsLog.LogInfo("GetStockList - trying to save stock list, Records - " + branchDataTable.Rows.Count);
 
                 using (SqlConnection con = new SqlConnection(connection))
                 {
@@ -352,6 +363,9 @@ namespace DynData.LKQ
                         con.Close();
                     }
                 }
+
+                clsLog.LogInfo("GetStockList - save stock list, Records - " + branchDataTable.Rows.Count);
+
             }
             catch (Exception ex)
             {

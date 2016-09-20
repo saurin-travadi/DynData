@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
@@ -20,12 +21,19 @@ namespace DynMonitoring
         [WebMethod]
         public static string GetLogs(string date)
         {
-            var file = Path.Combine(ConfigurationManager.AppSettings["FilePath"], DateTime.Today.ToString("yyyyMMdd") + ".log");
-            string line = "";
-            var data = File.ReadLines(file);
-            data.ToList().ForEach(e => line += e + "<br />");
+            if (date == "")
+                date = DateTime.Today.ToString("yyyyMMdd");
 
-            return line;
+            var file = Path.Combine(ConfigurationManager.AppSettings["FilePath"], date + ".log");
+            StringBuilder line = new StringBuilder("");
+            if (!File.Exists(file))
+                line.AppendLine("No logs available");
+            else
+            {
+                var data = File.ReadLines(file);
+                data.ToList().ForEach(e => line.Insert(0,e + "<br />"));
+            }
+            return line.ToString();
         }
     }
 }
