@@ -144,7 +144,7 @@ namespace DynData.LKQ
                         {
                             var large = dbThumbURL.Replace("height=240", "height=480").Replace("width=320", "width=640").Replace("~I1","~I"+image.ToString());
                             var thumb = dbThumbURL.Replace("resizer", "thumbnail").Replace("&height=240&width=320", "").Replace("~I1", "~I" + image.ToString());
-                            vehicle.VehicleInformationImage[image-1] = new VehicleInformationImage() { ThumbnailURL = thumb, LargeURL = large.Substring(0,75) };
+                            vehicle.VehicleInformationImage[image-1] = new VehicleInformationImage() { ThumbnailURL = thumb, LargeURL = large };
                         }
                     }
                     vehicleList.Add(vehicle);
