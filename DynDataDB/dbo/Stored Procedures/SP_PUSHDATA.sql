@@ -1,20 +1,14 @@
 ﻿CREATE PROCEDURE [dbo].[SP_PUSHDATA]
 AS 
 
+
+DECLARE @run DATETIME
+SELECT @run = LastRun FROM dbo.Job where [JobName]='LKQPush'
+
 select ItemID, Lane, Slot, Start=SUBSTRING(Start,1,10), livedate, BranchCode, StockNo, VIN, VehicleYear, VehicleMake, VehicleModel, Transmission, 
             RunAndDrive, OdoBrand, Odometer, PrimaryDamage, SecondaryDamage, VehicleTitle, LossType, SaleDocument,
-			ThumbnailURL
+			ThumbnailURL, modify_date
         from nonddrstock where 
-		LiveDate = 'TBD' 
-		and stockno not in (select stocknumber from stock)
-
-UNION ALL
-
-select ItemID, Lane, Slot, Start=SUBSTRING(Start,1,10), livedate=convert(varchar,convert(datetime,livedate),101)+' '+convert(varchar,convert(datetime,livedate),108), BranchCode, StockNo, VIN, VehicleYear, VehicleMake, VehicleModel, Transmission, 
-			RunAndDrive, OdoBrand, Odometer, PrimaryDamage, SecondaryDamage, VehicleTitle, LossType, SaleDocument, ThumbnailURL
-		from nonddrstock where 
-		ISDATE(LiveDate)=1 
-		and stockno not in (select stocknumber from stock)
-
-
+		stockno not in (select stocknumber from stock)
+		and modify_date>@run
 ORDER BY StockNo
