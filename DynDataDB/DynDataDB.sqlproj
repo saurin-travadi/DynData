@@ -80,6 +80,7 @@
     <Build Include="dbo\Tables\Job.sql" />
     <Build Include="dbo\Stored Procedures\SP_PUSHDATA.sql" />
     <Build Include="dbo\Stored Procedures\SP_NextJob.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ReRunJob.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SchemaComparison\DB2Project.scmp" />

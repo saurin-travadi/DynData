@@ -155,13 +155,17 @@ namespace DynData.LKQ
                 var index = 0;
                 do
                 {
-                    var request = new VehicleUploadRequest() { VehicleInformationList = vehicleList.Skip(index).Take(1).ToArray(), UserRequestInfo = User };
+                    var request = new VehicleUploadRequest() { VehicleInformationList = vehicleList.Skip(index).Take(500).ToArray(), UserRequestInfo = User };
                     var response = Client.UploadVehicleInformation(request);
                     if (!response.WasSuccessful)
                     {
                         clsLog.LogInfo("PushData - Error out while pushing data to remote from " + index.ToString());
                     }
-                    index += 499;
+                    else
+                    {
+                        clsLog.LogInfo("PushData - Pushed data to remote from " + index.ToString() + " to " + request.VehicleInformationList.Count());
+                    }
+                    index += 500;
                 } while (index <= vehicleList.Count);
 
             }

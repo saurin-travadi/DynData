@@ -15,16 +15,24 @@ namespace DynMonitoring
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+                return;
 
+            var dir = ConfigurationManager.AppSettings["FilePath"];
+            new DirectoryInfo(dir).GetFiles().ToList().OrderByDescending(o=>o.Name).Take(5).ToList().ForEach(f =>
+            {
+                form1.Controls.Add(new LinkButton() { Text = f.Name, OnClientClick = "return getLogs('" + f.Name + "')" });
+            });
         }
 
         [WebMethod]
         public static string GetLogs(string date)
         {
             if (date == "")
-                date = DateTime.Today.ToString("yyyyMMdd");
+                date = DateTime.Today.ToString("yyyyMMdd")+ ".log";
+                
 
-            var file = Path.Combine(ConfigurationManager.AppSettings["FilePath"], date + ".log");
+            var file = Path.Combine(ConfigurationManager.AppSettings["FilePath"], date);
             StringBuilder line = new StringBuilder("");
             if (!File.Exists(file))
                 line.AppendLine("No logs available");
