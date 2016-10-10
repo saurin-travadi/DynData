@@ -58,13 +58,19 @@ namespace DynData.LKQ
         public void GetData()
         {
             clsLog.LogInfo("Getting BranchList");
-            GetBranchList();
+            if (GetBranchList())
+            {
 
-            clsLog.LogInfo("Getting Auction Dates");
-            GetAuctionDates();
+                clsLog.LogInfo("Getting Auction Dates");
+                GetAuctionDates();
 
-            clsLog.LogInfo("Getting StockList");
-            GetStockList();
+                clsLog.LogInfo("Getting StockList");
+                GetStockList();
+            }
+            else
+            {
+                clsLog.LogInfo("Skipped Auction & Stock list process");
+            }
         }
 
         public void PushData()
@@ -175,7 +181,7 @@ namespace DynData.LKQ
             }
         }
 
-        private void GetBranchList()
+        private bool GetBranchList()
         {
             var request = new GetBranchListRequest() { PartnerIds = new int[] { PartnerID }, UserRequestInfo = User };
             var response = Client.GetBranchList(request);
@@ -218,17 +224,20 @@ namespace DynData.LKQ
                     }
 
                     clsLog.LogInfo("GetBranchList - saved branch list");
-
                 }
                 catch (Exception ex)
                 {
                     clsLog.LogInfo("GetBranchList - Error while getting branch list from remote. Error " + ex.Message);
                 }
+                return true;
 
             }
             else
             {
                 clsLog.LogInfo("GetBranchList - didn't get branch list from remote");
+                clsLog.LogInfo("Response from server : " + response.Errors[0]);
+
+                return false;
             }
         }
 
