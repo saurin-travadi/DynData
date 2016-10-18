@@ -47,12 +47,11 @@ namespace DynData.LKQ
 
         public LKQClient()
         {
-            PartnerID = 103;
-            VerificationCode = new Guid("8e37acab-e44a-4fec-8509-3a469dd8ec08");
+            VerificationCode = new Guid(ConfigurationManager.AppSettings["Key"]);
             User = new UserInformation() { VerificationCode = VerificationCode };
+            PartnerID = Convert.ToInt16(ConfigurationManager.AppSettings["ParnerId"]);
 
             Client = new AuctionClient();
-
         }
 
         public void GetData()
@@ -148,9 +147,9 @@ namespace DynData.LKQ
                         vehicle.VehicleInformationImage = new VehicleInformationImage[10];
                         for (int image = 1; image <= 10; image++)
                         {
-                            var large = dbThumbURL.Replace("height=240", "height=480").Replace("width=320", "width=640").Replace("~I1","~I"+image.ToString());
+                            var large = dbThumbURL.Replace("height=240", "height=480").Replace("width=320", "width=640").Replace("~I1", "~I" + image.ToString());
                             var thumb = dbThumbURL.Replace("resizer", "thumbnail").Replace("&height=240&width=320", "").Replace("~I1", "~I" + image.ToString());
-                            vehicle.VehicleInformationImage[image-1] = new VehicleInformationImage() { ThumbnailURL = thumb, LargeURL = large };
+                            vehicle.VehicleInformationImage[image - 1] = new VehicleInformationImage() { ThumbnailURL = thumb, LargeURL = large };
                         }
                     }
                     vehicleList.Add(vehicle);
@@ -195,8 +194,6 @@ namespace DynData.LKQ
                     //parse response, get a list of branch and update property for next method.
                     BranchList = response.RequestedData[0].BranchCodes.ToList().ConvertAll(c => new Branch() { BranchCode = c });
 
-
-
                     var branchDataTable = new DataTable();
                     using (var reader = ObjectReader.Create(BranchList, "BranchCode"))
                     {
@@ -228,6 +225,7 @@ namespace DynData.LKQ
                 catch (Exception ex)
                 {
                     clsLog.LogInfo("GetBranchList - Error while getting branch list from remote. Error " + ex.Message);
+                    return false;
                 }
                 return true;
 
