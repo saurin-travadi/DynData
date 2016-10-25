@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="10d94d1e-ebf3-4377-9898-8292da06dcb8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://lkqintegrationqc.ekeyconnect.com/Image.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Image.xsd" MetadataType="Schema" ID="39725efe-c0dc-4c7b-8876-5e837ab7ee32" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Image.svc?xsd=xsd1" />
+    <MetadataFile FileName="Image1.xsd" MetadataType="Schema" ID="347b4e0e-a229-4214-851e-13f4e45f9f5e" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Image.svc?xsd=xsd5" />
+    <MetadataFile FileName="Image.wsdl" MetadataType="Wsdl" ID="0f97f76e-025d-4955-8e34-33fb886be581" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Image.svc?wsdl" />
+    <MetadataFile FileName="Image2.xsd" MetadataType="Schema" ID="0284fd0c-5992-4b0b-8cb9-dc93f32fc756" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Image.svc?xsd=xsd2" />
+    <MetadataFile FileName="Image3.xsd" MetadataType="Schema" ID="e3ec4d3b-ccdc-4ba1-bffd-113958fb1eed" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Image.svc?xsd=xsd4" />
+    <MetadataFile FileName="Image4.xsd" MetadataType="Schema" ID="a1ea04de-56d4-4e5d-84d9-a28d9d1641f1" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Image.svc?xsd=xsd3" />
+    <MetadataFile FileName="Image.disco" MetadataType="Disco" ID="8c00b43b-e8d9-4ec6-bf76-784f6cdb06c7" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Image.svc?disco" />
+    <MetadataFile FileName="Image5.xsd" MetadataType="Schema" ID="4ff633cd-ab05-49c6-b8a4-0e3ac80c98cc" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Image.svc?xsd=xsd0" />
+    <MetadataFile FileName="Image1.wsdl" MetadataType="Wsdl" ID="9c0ee2b9-ac5d-444d-91e2-e5d2ebedb4ed" SourceId="1" SourceUrl="https://lkqintegrationqc.ekeyconnect.com/Image.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

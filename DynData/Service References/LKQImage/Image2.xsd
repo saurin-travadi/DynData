@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Image.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Image.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://lkqintegrationqc.ekeyconnect.com/Image.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" />
+  <xs:complexType name="ImageUploadRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" base="q1:UserRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ImageInformation" nillable="true" type="tns:ImageInformationDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImageUploadRequest" nillable="true" type="tns:ImageUploadRequest" />
+  <xs:complexType name="ImageInformationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageByteArray" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageInformationDto" nillable="true" type="tns:ImageInformationDto" />
+</xs:schema>

@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DynData.DDRAuction;
 using System.Configuration;
-
+using System.Collections.Generic;
 
 namespace LKQCTest
 {
@@ -25,7 +25,6 @@ namespace LKQCTest
 
 
             Client = new AuctionClient();
-
         }
 
         [TestMethod]
@@ -143,6 +142,7 @@ namespace LKQCTest
             Assert.IsTrue(stockInfo.WasSuccessful);
             
         }
+
         [TestMethod]
         public void GetStocksRecentBidsTest()
         {
@@ -154,10 +154,10 @@ namespace LKQCTest
             Assert.IsTrue(stockRecentBid.WasSuccessful);
             
         }
+
         [TestMethod]
         public void GetUtcAuctionDateByBranchTest()
         {
-
 
             var request = new GetBranchAuctionsRequest() { PartnerId = PartnerID, UserRequestInfo = User, BranchCode = "811" };
             var utcAuctionDate = Client.GetUtcAuctionDateByBranch(request);
@@ -165,10 +165,10 @@ namespace LKQCTest
             Assert.IsTrue(utcAuctionDate.WasSuccessful);
             
         }
+
         [TestMethod]
         public void GetChangedStockListByAuctionDateByBranchTest()
         {
-
 
             var request = new GetStockListByAuctionDateByBranchRequest() { PartnerId = PartnerID, UserRequestInfo = User, BranchCode = "811", AuctionDate = DateTimeOffset.Parse("2016-11-07 11:00:00.0") };
             var changedStockList = Client.GetChangedStockListByAuctionDateByBranch(request);
@@ -177,6 +177,50 @@ namespace LKQCTest
                         
         }
 
+        [TestMethod]
+        public void UploadVehicleInformationTest()
+        {
+            var vehicle = new VehicleInformationDto()
+            {
+                ItemID = 1,
+                Lane = "A",
+                Slot = "123",
+                Start = "Yes",
+                BranchCode = 123,
+                StockNo = "12345678",
+                VIN = "WBA8E9C5XGK646786",
+                VehicleYear = "2000",
+                VehicleMake = "Honda",
+                VehicleModel = "Accord",
+                Transmission = "AT",
+                RunAndDrive = "Yes",
+                OdoBrand = "Actual",
+                Odometer = "10000",
+                PrimaryDamage = "Front End",
+                SecondaryDamage = "Front End",
+                VehicleTitle = "Clear",
+                LossType = "Water",
+                SaleDocument = "Clear",
+                AuctionDate = System.DateTime.Now
+            };
+
+            vehicle.VehicleInformationImage = new VehicleInformationImage[10];
+            for (int image = 1; image <= 10; image++)
+            {
+                var large = "https://cvis.iaai.com/thumbnail?imageKeys=18693774~SID~I" + image;
+                var thumb = "https://cvis.iaai.com/resizer?imageKeys=18693774~SID~I" + image;
+                vehicle.VehicleInformationImage[image - 1] = new VehicleInformationImage() { ThumbnailURL = thumb, LargeURL = large };
+            }
+
+            var vehicles = new List<VehicleInformationDto>();
+            vehicles.Add(vehicle);
+
+            var request = new VehicleUploadRequest() { UserRequestInfo=User, VehicleInformationList=vehicles.ToArray() };
+            var uploadStockList = Client.UploadVehicleInformation(request);
+
+            Assert.IsTrue(uploadStockList.WasSuccessful);
+
+        }
 
 
     }
