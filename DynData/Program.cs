@@ -13,7 +13,7 @@ namespace DynData
             //new IAA.IAAClient().GetData();
             //new LKQ.LKQClient().PushData();
 
-            new LKQ.LKQImageClient().GetImage();
+            new LKQ.LKQImageClient().GetData();
         }
 
         
