@@ -24,8 +24,12 @@ namespace DynData.LKQ
         }
         public string GetImage(string StockNumber, int Index)
         {
-            var image = new DeepZoom.Image();
-            return image.Generate(StockNumber, Index);
+            var img = new DeepZoom.Image();
+            img.AccessKey = "AKIAIUI7FO46USBPEZZA";
+            img.SecretAccessKey = "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";
+            img.AWSRegion = Amazon.RegionEndpoint.USEast2;
+
+            return img.Generate(StockNumber, Index);
         }
 
         public void GetData()
@@ -44,6 +48,8 @@ namespace DynData.LKQ
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@HandlerName", Environment.MachineName);
+
                         da.Fill(dt);
                     }
                 }
