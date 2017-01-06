@@ -24,20 +24,25 @@ namespace Service
             CreateDirectory();
         }
 
-        public static bool LogError(string message)
+        public static void Log(string message)
         {
-            return LogToFile(message, "Error");
+            LogToFile(message, "Service");
         }
 
-        public static bool LogInfo(string message)
+        public static void LogError(string message)
         {
-            return LogToFile(message, "Info");
+            LogToFile(message, "Error");
         }
 
-        private static bool LogToFile(string Message, string mode)
+        public static void LogInfo(string message)
+        {
+            if (ConfigurationManager.AppSettings["Log_Type"] == "Info")
+                LogToFile(message, "Info");
+        }
+
+        private static void LogToFile(string Message, string mode)
         {
             TextWriter tw = null;
-            bool retVal = true;
             try
             {
                 // for thread safe write, we are using Synchronization
@@ -47,7 +52,7 @@ namespace Service
             }
             catch 
             {
-                retVal = false;
+                //ignore this error
             }
 
             if (tw != null)
@@ -56,7 +61,6 @@ namespace Service
                 tw.Close();
                 tw = null;
             }
-            return retVal;
         }
 
         private static bool CreateDirectory()

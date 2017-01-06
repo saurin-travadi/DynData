@@ -202,10 +202,13 @@ namespace DynData.LKQImage {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] ImageByteArrayField;
+        private string AuctionPartnerIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ImageNameField;
+        private string FileNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ImageByteArrayField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StockNumberField;
@@ -221,6 +224,32 @@ namespace DynData.LKQImage {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AuctionPartnerId {
+            get {
+                return this.AuctionPartnerIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AuctionPartnerIdField, value) != true)) {
+                    this.AuctionPartnerIdField = value;
+                    this.RaisePropertyChanged("AuctionPartnerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FileName {
+            get {
+                return this.FileNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FileNameField, value) != true)) {
+                    this.FileNameField = value;
+                    this.RaisePropertyChanged("FileName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public byte[] ImageByteArray {
             get {
                 return this.ImageByteArrayField;
@@ -229,19 +258,6 @@ namespace DynData.LKQImage {
                 if ((object.ReferenceEquals(this.ImageByteArrayField, value) != true)) {
                     this.ImageByteArrayField = value;
                     this.RaisePropertyChanged("ImageByteArray");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ImageName {
-            get {
-                return this.ImageNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ImageNameField, value) != true)) {
-                    this.ImageNameField = value;
-                    this.RaisePropertyChanged("ImageName");
                 }
             }
         }

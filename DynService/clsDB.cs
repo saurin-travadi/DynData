@@ -21,6 +21,7 @@ namespace Service
                     command.CommandTimeout = commandTimeout;
                     command.ExecuteNonQuery();
                 }
+                if (conn.State != ConnectionState.Closed) conn.Close();
             }
         }
 
@@ -39,6 +40,7 @@ namespace Service
                             da.Fill(ds);
                         }
                     }
+                    if (conn.State != ConnectionState.Closed) conn.Close();
                 }
                 return ds;
             }
@@ -55,6 +57,7 @@ namespace Service
                     command.CommandTimeout = commandTimeout;
                     return command.ExecuteScalar();
                 }
+                if (conn.State != ConnectionState.Closed) conn.Close();
             }
         }
         

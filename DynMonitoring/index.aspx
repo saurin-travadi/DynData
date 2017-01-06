@@ -33,12 +33,15 @@
 </head>
 <body>
 
+    <div id="images" runat="server">
+    </div>
+    <hr />
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
         </asp:ScriptManager>
-        
+
     </form>
     <div id="logs">
-        </div>
+    </div>
 </body>
 </html>

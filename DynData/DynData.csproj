@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5F5A3FB2-687B-48AC-8BAC-70C7567F32F2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DynData</RootNamespace>
     <AssemblyName>DynData</AssemblyName>
@@ -38,14 +38,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ReferenceFolder\AWSSDK.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ReferenceFolder\AWSSDK.S3.dll</HintPath>
-    </Reference>
     <Reference Include="DeepZoom, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ReferenceFolder\DeepZoom.dll</HintPath>
@@ -89,6 +81,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -247,8 +240,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ReferenceFolder\AWSSDK.Core.dll" />
-    <Content Include="ReferenceFolder\AWSSDK.S3.dll" />
     <Content Include="ReferenceFolder\DeepZoom.dll" />
     <Content Include="ReferenceFolder\FastMember.dll" />
   </ItemGroup>

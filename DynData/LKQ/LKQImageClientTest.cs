@@ -34,7 +34,7 @@ namespace LKQCTest
             var vehicle = new ImageInformationDto();
             var large = "https://cvis.iaai.com/thumbnail?imageKeys=18693774~SID~I1";
             vehicle.StockNumber = "18693774";
-            vehicle.ImageName = "18693774_1";
+            vehicle.FileName = "18693774_1";
             vehicle.ImageByteArray = new WebClient().DownloadData(large);
 
             var request = new ImageUploadRequest() { UserRequestInfo = User, ImageInformation = vehicle };

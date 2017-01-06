@@ -11,7 +11,7 @@ namespace DynData
     public class clsDB
     {
 
-        public static void funcExecuteSQL(string sql, string connection, int commandTimeout=120)
+        public static void funcExecuteSQL(string sql, string connection, int commandTimeout = 120)
         {
             using (var conn = new SqlConnection(connection))
             {
@@ -21,10 +21,11 @@ namespace DynData
                     command.CommandTimeout = commandTimeout;
                     command.ExecuteNonQuery();
                 }
+                if (conn.State != ConnectionState.Closed) conn.Close();
             }
         }
 
-        public static DataSet funcExecuteSQLDS(string sql, string connection, int commandTimeout=120)
+        public static DataSet funcExecuteSQLDS(string sql, string connection, int commandTimeout = 120)
         {
             using (var ds = new DataSet())
             {
@@ -39,6 +40,7 @@ namespace DynData
                             da.Fill(ds);
                         }
                     }
+                    if (conn.State != ConnectionState.Closed) conn.Close();
                 }
                 return ds;
             }
@@ -55,8 +57,9 @@ namespace DynData
                     command.CommandTimeout = commandTimeout;
                     return command.ExecuteScalar();
                 }
+                if (conn.State != ConnectionState.Closed) conn.Close();
             }
         }
-        
+
     }
 }

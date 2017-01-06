@@ -13,8 +13,9 @@
   <xs:element name="ImageUploadRequest" nillable="true" type="tns:ImageUploadRequest" />
   <xs:complexType name="ImageInformationDto">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AuctionPartnerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ImageByteArray" nillable="true" type="xs:base64Binary" />
-      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

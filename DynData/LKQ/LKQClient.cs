@@ -180,6 +180,11 @@ namespace DynData.LKQ
             }
         }
 
+        public void Cleanup()
+        {
+            var ds = clsDB.funcExecuteSQLDS("SP_CleanUpData", ConfigurationManager.ConnectionStrings["Connection"].ConnectionString);
+        }
+
         private bool GetBranchList()
         {
             var request = new GetBranchListRequest() { PartnerIds = new int[] { PartnerID }, UserRequestInfo = User };
@@ -224,7 +229,7 @@ namespace DynData.LKQ
                 }
                 catch (Exception ex)
                 {
-                    clsLog.LogInfo("GetBranchList - Error while getting branch list from remote. Error " + ex.Message);
+                    clsLog.LogError("GetBranchList - Error while getting branch list from remote. Error " + ex.Message);
                     return false;
                 }
                 return true;
@@ -301,7 +306,7 @@ namespace DynData.LKQ
             }
             catch (Exception ex)
             {
-                clsLog.LogInfo("GetAuctionDates - Error while getting auction dates. Error " + ex.Message);
+                clsLog.LogError("GetAuctionDates - Error while getting auction dates. Error " + ex.Message);
             }
 
 
@@ -380,7 +385,7 @@ namespace DynData.LKQ
             }
             catch (Exception ex)
             {
-                clsLog.LogInfo("GetStockList - Error while getting stock list. Error " + ex.Message);
+                clsLog.LogError("GetStockList - Error while getting stock list. Error " + ex.Message);
             }
         }
     }

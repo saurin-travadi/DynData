@@ -1,0 +1,1717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d62b9933-a91d-4daf-8b93-073c30c7421a" activeEnvironment="Default" name="Auction" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="10c68e0a-e821-424b-ae2c-a3c236952774" wsaVersion="NONE" name="BasicHttpBinding_Auction" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_Auction" soapVersion="1_1" anonymous="optional" definition="https://lkqintegration.ekeyconnect.com/Auction.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://lkqintegration.ekeyconnect.com/Auction.svc?wsdl"><con:part><con:url>https://lkqintegration.ekeyconnect.com/Auction.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Auction" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:i0="LKQCorp.LKQIntegrationService" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_Auction_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="LKQCorp.LKQIntegrationService" location="https://lkqintegration.ekeyconnect.com/Auction.svc?wsdl=wsdl0"/>
+  <wsdl:types/>
+  <wsdl:binding name="BasicHttpBinding_Auction" type="i0:Auction">
+    <wsp:PolicyReference URI="#BasicHttpBinding_Auction_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetBranchList">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetBranchList" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchInfo">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetBranchInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionDatesByBranch">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtcAuctionDateByBranch">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockListByAuctionDateByBranch">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedStockListByAuctionDateByBranch">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedStockListbyLastAccess">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccess" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStocksRecentBids">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBids" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockCurrentBid">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBid" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerIds">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetPartnerIds" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockInfo">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetStockInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyItNowStocks">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocks" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterchangeByVin">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVin" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadVehicleInformation">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewlyAssignedByPeriod">
+      <soap:operation soapAction="LKQCorp.LKQIntegrationService/Auction/GetNewlyAssignedByPeriod" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Auction">
+    <wsdl:port name="BasicHttpBinding_Auction" binding="tns:BasicHttpBinding_Auction">
+      <soap:address location="https://lkqintegration.ekeyconnect.com/Auction.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://lkqintegration.ekeyconnect.com/Auction.svc?wsdl=wsdl0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="LKQCorp.LKQIntegrationService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="LKQCorp.LKQIntegrationService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="LKQCorp.LKQIntegrationService/Imports">
+      <xsd:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd0" namespace="LKQCorp.LKQIntegrationService"/>
+      <xsd:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      <xsd:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities"/>
+      <xsd:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      <xsd:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Auction_GetBranchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchList"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBranchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchListResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBranchInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchInfo"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBranchInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetAuctionDatesByBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionDatesByBranch"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetAuctionDatesByBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionDatesByBranchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetUtcAuctionDateByBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtcAuctionDateByBranch"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetUtcAuctionDateByBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtcAuctionDateByBranchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockListByAuctionDateByBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockListByAuctionDateByBranch"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockListByAuctionDateByBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockListByAuctionDateByBranchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetChangedStockListByAuctionDateByBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangedStockListByAuctionDateByBranch"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetChangedStockListByAuctionDateByBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangedStockListByAuctionDateByBranchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetChangedStockListbyLastAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangedStockListbyLastAccess"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetChangedStockListbyLastAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangedStockListbyLastAccessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStocksRecentBids_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStocksRecentBids"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStocksRecentBids_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStocksRecentBidsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockCurrentBid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockCurrentBid"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockCurrentBid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockCurrentBidResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetPartnerIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartnerIds"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetPartnerIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartnerIdsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockInfo"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetStockInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBuyItNowStocks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyItNowStocks"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetBuyItNowStocks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyItNowStocksResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetInterchangeByVin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInterchangeByVin"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetInterchangeByVin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInterchangeByVinResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_UploadVehicleInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadVehicleInformation"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_UploadVehicleInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadVehicleInformationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetNewlyAssignedByPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewlyAssignedByPeriod"/>
+  </wsdl:message>
+  <wsdl:message name="Auction_GetNewlyAssignedByPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewlyAssignedByPeriodResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="Auction">
+    <wsdl:operation name="GetBranchList">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBranchList" message="tns:Auction_GetBranchList_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBranchListResponse" message="tns:Auction_GetBranchList_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchInfo">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBranchInfo" message="tns:Auction_GetBranchInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBranchInfoResponse" message="tns:Auction_GetBranchInfo_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionDatesByBranch">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranch" message="tns:Auction_GetAuctionDatesByBranch_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranchResponse" message="tns:Auction_GetAuctionDatesByBranch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtcAuctionDateByBranch">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranch" message="tns:Auction_GetUtcAuctionDateByBranch_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranchResponse" message="tns:Auction_GetUtcAuctionDateByBranch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockListByAuctionDateByBranch">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranch" message="tns:Auction_GetStockListByAuctionDateByBranch_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranchResponse" message="tns:Auction_GetStockListByAuctionDateByBranch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedStockListByAuctionDateByBranch">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranch" message="tns:Auction_GetChangedStockListByAuctionDateByBranch_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranchResponse" message="tns:Auction_GetChangedStockListByAuctionDateByBranch_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangedStockListbyLastAccess">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccess" message="tns:Auction_GetChangedStockListbyLastAccess_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccessResponse" message="tns:Auction_GetChangedStockListbyLastAccess_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStocksRecentBids">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBids" message="tns:Auction_GetStocksRecentBids_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBidsResponse" message="tns:Auction_GetStocksRecentBids_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockCurrentBid">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBid" message="tns:Auction_GetStockCurrentBid_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBidResponse" message="tns:Auction_GetStockCurrentBid_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerIds">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetPartnerIds" message="tns:Auction_GetPartnerIds_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetPartnerIdsResponse" message="tns:Auction_GetPartnerIds_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockInfo">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockInfo" message="tns:Auction_GetStockInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetStockInfoResponse" message="tns:Auction_GetStockInfo_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyItNowStocks">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocks" message="tns:Auction_GetBuyItNowStocks_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocksResponse" message="tns:Auction_GetBuyItNowStocks_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterchangeByVin">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVin" message="tns:Auction_GetInterchangeByVin_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVinResponse" message="tns:Auction_GetInterchangeByVin_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="UploadVehicleInformation">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformation" message="tns:Auction_UploadVehicleInformation_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformationResponse" message="tns:Auction_UploadVehicleInformation_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewlyAssignedByPeriod">
+      <wsdl:input wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetNewlyAssignedByPeriod" message="tns:Auction_GetNewlyAssignedByPeriod_InputMessage"/>
+      <wsdl:output wsaw:Action="LKQCorp.LKQIntegrationService/Auction/GetNewlyAssignedByPeriodResponse" message="tns:Auction_GetNewlyAssignedByPeriod_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="LKQCorp.LKQIntegrationService" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="LKQCorp.LKQIntegrationService">
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities"/>
+  <xs:element name="GetBranchList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:GetBranchListRequest" xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBranchListResult" nillable="true" type="q2:ResultWithArrayOfBranchCodesByPartner" xmlns:q2="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q3:GetBranchInfoRequest" xmlns:q3="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBranchInfoResult" nillable="true" type="q4:ResultWithArrayOfBranchLocationsByPartner" xmlns:q4="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuctionDatesByBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q5:GetBranchAuctionsRequest" xmlns:q5="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuctionDatesByBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAuctionDatesByBranchResult" nillable="true" type="q6:ResultWithArrayOfBranchAuction" xmlns:q6="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtcAuctionDateByBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q7:GetBranchAuctionsRequest" xmlns:q7="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUtcAuctionDateByBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUtcAuctionDateByBranchResult" nillable="true" type="q8:ResultWithArrayOfBranchAuction" xmlns:q8="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockListByAuctionDateByBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q9:GetStockListByAuctionDateByBranchRequest" xmlns:q9="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockListByAuctionDateByBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStockListByAuctionDateByBranchResult" nillable="true" type="q10:ResultWithArrayOfstring" xmlns:q10="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangedStockListByAuctionDateByBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q11:GetStockListByAuctionDateByBranchRequest" xmlns:q11="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangedStockListByAuctionDateByBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetChangedStockListByAuctionDateByBranchResult" nillable="true" type="q12:ResultWithArrayOfstring" xmlns:q12="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangedStockListbyLastAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q13:PartnerRequest" xmlns:q13="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangedStockListbyLastAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetChangedStockListbyLastAccessResult" nillable="true" type="q14:ResultWithArrayOfStockNumbersByBranchCode" xmlns:q14="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStocksRecentBids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q15:PartnerRequest" xmlns:q15="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStocksRecentBidsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStocksRecentBidsResult" nillable="true" type="q16:ResultWithArrayOfRecentBidsByBranchCode" xmlns:q16="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockCurrentBid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q17:CurrentBidRequest" xmlns:q17="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockCurrentBidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStockCurrentBidResult" nillable="true" type="q18:ResultWithStockNumberRecentBid" xmlns:q18="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartnerIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q19:UserRequest" xmlns:q19="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartnerIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPartnerIdsResult" nillable="true" type="q20:ResultWithArrayOfAuctionPartner" xmlns:q20="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q21:GetStockInfoRequest" xmlns:q21="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStockInfoResult" nillable="true" type="q22:ResultWithArrayOfVehicleInformation" xmlns:q22="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuyItNowStocks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q23:PartnerRequest" xmlns:q23="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuyItNowStocksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBuyItNowStocksResult" nillable="true" type="q24:ResultWithArrayOfBuyItNowStock" xmlns:q24="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInterchangeByVin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q25:VehicleInterchangeInfoRequest" xmlns:q25="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInterchangeByVinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInterchangeByVinResult" nillable="true" type="q26:ResultWithInterchangeInfoResult" xmlns:q26="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadVehicleInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q27:VehicleUploadRequest" xmlns:q27="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadVehicleInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadVehicleInformationResult" nillable="true" type="q28:ServiceResult" xmlns:q28="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewlyAssignedByPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q29:GetNewlyAssignedRequest" xmlns:q29="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewlyAssignedByPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewlyAssignedByPeriodResult" nillable="true" type="q30:ResultWithArrayOfVehicleInformation" xmlns:q30="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities">
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities"/>
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System"/>
+  <xs:complexType name="GetBranchListRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q1:UserRequest" xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartnerIds" nillable="true" type="q2:ArrayOfint" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetBranchListRequest" nillable="true" type="tns:GetBranchListRequest"/>
+  <xs:complexType name="ArrayOfBranchCodesByPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchCodesByPartner" nillable="true" type="tns:BranchCodesByPartner"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranchCodesByPartner" nillable="true" type="tns:ArrayOfBranchCodesByPartner"/>
+  <xs:complexType name="BranchCodesByPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchCodes" nillable="true" type="q3:ArrayOfstring" xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BranchCodesByPartner" nillable="true" type="tns:BranchCodesByPartner"/>
+  <xs:complexType name="GetBranchInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q4:UserRequest" xmlns:q4="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BranchCodesByPartner" nillable="true" type="tns:ArrayOfBranchCodesByPartner"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetBranchInfoRequest" nillable="true" type="tns:GetBranchInfoRequest"/>
+  <xs:complexType name="ArrayOfBranchLocationsByPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchLocationsByPartner" nillable="true" type="tns:BranchLocationsByPartner"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranchLocationsByPartner" nillable="true" type="tns:ArrayOfBranchLocationsByPartner"/>
+  <xs:complexType name="BranchLocationsByPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchLocations" nillable="true" type="tns:ArrayOfBranchLocation"/>
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BranchLocationsByPartner" nillable="true" type="tns:BranchLocationsByPartner"/>
+  <xs:complexType name="ArrayOfBranchLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchLocation" nillable="true" type="tns:BranchLocation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranchLocation" nillable="true" type="tns:ArrayOfBranchLocation"/>
+  <xs:complexType name="BranchLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BranchLocationId" type="xs:int"/>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Created" type="q5:DateTimeOffset" xmlns:q5="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="CultureName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int"/>
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StateProvince" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UpdatedAt" type="q6:DateTimeOffset" xmlns:q6="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BranchLocation" nillable="true" type="tns:BranchLocation"/>
+  <xs:complexType name="GetBranchAuctionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerAndBranchRequest">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetBranchAuctionsRequest" nillable="true" type="tns:GetBranchAuctionsRequest"/>
+  <xs:complexType name="PartnerAndBranchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PartnerAndBranchRequest" nillable="true" type="tns:PartnerAndBranchRequest"/>
+  <xs:complexType name="PartnerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q7:UserRequest" xmlns:q7="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartnerId" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PartnerRequest" nillable="true" type="tns:PartnerRequest"/>
+  <xs:complexType name="ArrayOfBranchAuction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BranchAuction" nillable="true" type="tns:BranchAuction"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranchAuction" nillable="true" type="tns:ArrayOfBranchAuction"/>
+  <xs:complexType name="BranchAuction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuctionDate" type="q8:DateTimeOffset" xmlns:q8="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="AuctionType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BranchAuctionId" type="xs:int"/>
+      <xs:element minOccurs="0" name="BranchLocationId" type="xs:int"/>
+      <xs:element minOccurs="0" name="DifferentialRefreshLastBegun" nillable="true" type="q9:DateTimeOffset" xmlns:q9="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="DifferentialRefreshLastCompleted" nillable="true" type="q10:DateTimeOffset" xmlns:q10="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="FullRefreshLastBegun" nillable="true" type="q11:DateTimeOffset" xmlns:q11="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="FullRefreshLastCompleted" nillable="true" type="q12:DateTimeOffset" xmlns:q12="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="IsAuctionActive" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="IsIBidAuction" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="IsPublicAuction" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="OnlineBiddingClose" nillable="true" type="q13:DateTimeOffset" xmlns:q13="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int"/>
+      <xs:element minOccurs="0" name="TimeZoneId" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BranchAuction" nillable="true" type="tns:BranchAuction"/>
+  <xs:complexType name="GetStockListByAuctionDateByBranchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerAndBranchRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuctionDate" type="q14:DateTimeOffset" xmlns:q14="http://schemas.datacontract.org/2004/07/System"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetStockListByAuctionDateByBranchRequest" nillable="true" type="tns:GetStockListByAuctionDateByBranchRequest"/>
+  <xs:complexType name="ArrayOfStockNumbersByBranchCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StockNumbersByBranchCode" nillable="true" type="tns:StockNumbersByBranchCode"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStockNumbersByBranchCode" nillable="true" type="tns:ArrayOfStockNumbersByBranchCode"/>
+  <xs:complexType name="StockNumbersByBranchCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StockNumbers" nillable="true" type="q15:ArrayOfstring" xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StockNumbersByBranchCode" nillable="true" type="tns:StockNumbersByBranchCode"/>
+  <xs:complexType name="ArrayOfRecentBidsByBranchCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecentBidsByBranchCode" nillable="true" type="tns:RecentBidsByBranchCode"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecentBidsByBranchCode" nillable="true" type="tns:ArrayOfRecentBidsByBranchCode"/>
+  <xs:complexType name="RecentBidsByBranchCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RecentBids" nillable="true" type="tns:ArrayOfStockNumberRecentBid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecentBidsByBranchCode" nillable="true" type="tns:RecentBidsByBranchCode"/>
+  <xs:complexType name="ArrayOfStockNumberRecentBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StockNumberRecentBid" nillable="true" type="tns:StockNumberRecentBid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStockNumberRecentBid" nillable="true" type="tns:ArrayOfStockNumberRecentBid"/>
+  <xs:complexType name="StockNumberRecentBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentBid" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StockNumberRecentBid" nillable="true" type="tns:StockNumberRecentBid"/>
+  <xs:complexType name="CurrentBidRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrentBidRequest" nillable="true" type="tns:CurrentBidRequest"/>
+  <xs:complexType name="ArrayOfAuctionPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuctionPartner" nillable="true" type="tns:AuctionPartner"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuctionPartner" nillable="true" type="tns:ArrayOfAuctionPartner"/>
+  <xs:complexType name="AuctionPartner">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PartnerId" type="xs:int"/>
+      <xs:element minOccurs="0" name="PartnerName" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuctionPartner" nillable="true" type="tns:AuctionPartner"/>
+  <xs:complexType name="GetStockInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StockNumbersByBranchCode" nillable="true" type="tns:StockNumbersByBranchCode"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetStockInfoRequest" nillable="true" type="tns:GetStockInfoRequest"/>
+  <xs:complexType name="ArrayOfVehicleInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleInformation" nillable="true" type="tns:VehicleInformation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleInformation" nillable="true" type="tns:ArrayOfVehicleInformation"/>
+  <xs:complexType name="VehicleInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuctionId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AuctionLane" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BranchAuctionId" type="xs:int"/>
+      <xs:element minOccurs="0" name="BuyItNowInformation" nillable="true" type="tns:BuyItNowStock"/>
+      <xs:element minOccurs="0" name="CertState" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Created" type="q16:DateTimeOffset" xmlns:q16="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="CurrentBid" nillable="true" type="tns:VehicleBid"/>
+      <xs:element minOccurs="0" name="DecodedVehicleIdentification" nillable="true" type="tns:DecodedVehicleIdentification"/>
+      <xs:element minOccurs="0" name="ExtraInformation" nillable="true" type="tns:ArrayOfVehicleInformationExtra"/>
+      <xs:element minOccurs="0" name="Images" nillable="true" type="tns:ArrayOfVehicleImage"/>
+      <xs:element minOccurs="0" name="InterchangeDataRetrievedForVin" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ItemId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="KeyStatus" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LossType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Odometer" type="xs:int"/>
+      <xs:element minOccurs="0" name="OdometerStatus" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PrimaryDamage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RunAndDrive" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SaleDocument" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SaleDocumentBrand" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SaleDocumentNotes" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SalvageType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SecondaryDamage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Seller" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShrinkWrap" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SpecialNotes" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StartStatus" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UpdatedAt" type="q17:DateTimeOffset" xmlns:q17="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="VIN" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int"/>
+      <xs:element minOccurs="0" name="VehicleStatus" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="WhoCanBuy" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Year" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformation" nillable="true" type="tns:VehicleInformation"/>
+  <xs:complexType name="BuyItNowStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuyItNowId" type="xs:int"/>
+      <xs:element minOccurs="0" name="BuyItNowPrice" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PreBidClose" nillable="true" type="q18:DateTimeOffset" xmlns:q18="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StockNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TimeZone" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UtcCloseDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuyItNowStock" nillable="true" type="tns:BuyItNowStock"/>
+  <xs:complexType name="VehicleBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BidId" type="xs:int"/>
+      <xs:element minOccurs="0" name="CurrentBid" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="UpdatedAt" type="q19:DateTimeOffset" xmlns:q19="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleBid" nillable="true" type="tns:VehicleBid"/>
+  <xs:complexType name="DecodedVehicleIdentification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CheckDigit" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Cylinders" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DriveLine" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Engine" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FuelType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RestraintSystem" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Series" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Transmission" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleClass" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int"/>
+      <xs:element minOccurs="0" name="VehicleType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VinInformationId" type="xs:int"/>
+      <xs:element minOccurs="0" name="Year" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DecodedVehicleIdentification" nillable="true" type="tns:DecodedVehicleIdentification"/>
+  <xs:complexType name="ArrayOfVehicleInformationExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleInformationExtra" nillable="true" type="tns:VehicleInformationExtra"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleInformationExtra" nillable="true" type="tns:ArrayOfVehicleInformationExtra"/>
+  <xs:complexType name="VehicleInformationExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InfoId" type="xs:int"/>
+      <xs:element minOccurs="0" name="InfoName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="InfoValue" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformationExtra" nillable="true" type="tns:VehicleInformationExtra"/>
+  <xs:complexType name="ArrayOfVehicleImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleImage" nillable="true" type="tns:VehicleImage"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleImage" nillable="true" type="tns:ArrayOfVehicleImage"/>
+  <xs:complexType name="VehicleImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AngleCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AngleDescription" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="HighResolution" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ImageId" type="xs:int"/>
+      <xs:element minOccurs="0" name="ImageNumber" type="xs:int"/>
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IsThumbnail" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="VehicleId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleImage" nillable="true" type="tns:VehicleImage"/>
+  <xs:complexType name="ArrayOfBuyItNowStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BuyItNowStock" nillable="true" type="tns:BuyItNowStock"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBuyItNowStock" nillable="true" type="tns:ArrayOfBuyItNowStock"/>
+  <xs:complexType name="VehicleInterchangeInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q20:UserRequest" xmlns:q20="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Vin" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VehicleInterchangeInfoRequest" nillable="true" type="tns:VehicleInterchangeInfoRequest"/>
+  <xs:complexType name="InterchangeInfoResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InterchangeInfo" nillable="true" type="tns:ArrayOfInterchangeNumberInfo"/>
+      <xs:element minOccurs="0" name="Vin" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InterchangeInfoResult" nillable="true" type="tns:InterchangeInfoResult"/>
+  <xs:complexType name="ArrayOfInterchangeNumberInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InterchangeNumberInfo" nillable="true" type="tns:InterchangeNumberInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInterchangeNumberInfo" nillable="true" type="tns:ArrayOfInterchangeNumberInfo"/>
+  <xs:complexType name="InterchangeNumberInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InterchangeList" nillable="true" type="tns:ArrayOfInterchange"/>
+      <xs:element minOccurs="0" name="PartTypeNbr" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InterchangeNumberInfo" nillable="true" type="tns:InterchangeNumberInfo"/>
+  <xs:complexType name="ArrayOfInterchange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Interchange" nillable="true" type="tns:Interchange"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInterchange" nillable="true" type="tns:ArrayOfInterchange"/>
+  <xs:complexType name="Interchange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ICDescription" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="InterchangeNumber" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Interchange" nillable="true" type="tns:Interchange"/>
+  <xs:complexType name="VehicleUploadRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q21:UserRequest" xmlns:q21="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VehicleInformationList" nillable="true" type="tns:ArrayOfVehicleInformationDto"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VehicleUploadRequest" nillable="true" type="tns:VehicleUploadRequest"/>
+  <xs:complexType name="ArrayOfVehicleInformationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleInformationDto" nillable="true" type="tns:VehicleInformationDto"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleInformationDto" nillable="true" type="tns:ArrayOfVehicleInformationDto"/>
+  <xs:complexType name="VehicleInformationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuctionDate" type="q22:DateTimeOffset" xmlns:q22="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:element minOccurs="0" name="BranchCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="ExtraField1" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExtraField2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExtraField3" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ItemID" type="xs:int"/>
+      <xs:element minOccurs="0" name="Lane" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LossType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="OdoBrand" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Odometer" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PrimaryDamage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RunAndDrive" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SaleDocument" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SecondaryDamage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Slot" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Start" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StockNo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Transmission" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VIN" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleInformationImage" nillable="true" type="tns:ArrayOfVehicleInformationImage"/>
+      <xs:element minOccurs="0" name="VehicleMake" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleModel" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleTitle" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VehicleYear" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformationDto" nillable="true" type="tns:VehicleInformationDto"/>
+  <xs:complexType name="ArrayOfVehicleInformationImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleInformationImage" nillable="true" type="tns:VehicleInformationImage"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleInformationImage" nillable="true" type="tns:ArrayOfVehicleInformationImage"/>
+  <xs:complexType name="VehicleInformationImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LargeURL" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ThumbnailURL" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleInformationImage" nillable="true" type="tns:VehicleInformationImage"/>
+  <xs:complexType name="GetNewlyAssignedRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q23:UserRequest" xmlns:q23="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NewlyAssignedVehicleDatesRequest" nillable="true" type="tns:NewlyAssignedVehicleDates"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetNewlyAssignedRequest" nillable="true" type="tns:GetNewlyAssignedRequest"/>
+  <xs:complexType name="NewlyAssignedVehicleDates">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="MaxRows" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewlyAssignedVehicleDates" nillable="true" type="tns:NewlyAssignedVehicleDates"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+  <xs:complexType name="ArrayOfint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint"/>
+  <xs:complexType name="ArrayOfstring">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="UserRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserRequestInfo" nillable="true" type="tns:UserInformation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRequest" nillable="true" type="tns:UserRequest"/>
+  <xs:complexType name="UserInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BusinessTypeForAccountNumber" type="tns:AccountNumberBusinessType"/>
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UserPassword" nillable="true" type="xs:string"/>
+      <xs:element name="VerificationCode" type="ser:guid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInformation" nillable="true" type="tns:UserInformation"/>
+  <xs:simpleType name="AccountNumberBusinessType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Aftermarket"/>
+      <xs:enumeration value="Salvage"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccountNumberBusinessType" nillable="true" type="tns:AccountNumberBusinessType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd6</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/System">
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="DateTimeOffset">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DateTime" type="xs:dateTime"/>
+      <xs:element name="OffsetMinutes" type="xs:short"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateTimeOffset" nillable="true" type="tns:DateTimeOffset"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd5</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity">
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+  <xs:import schemaLocation="https://lkqintegration.ekeyconnect.com/Auction.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:complexType name="ResultWithArrayOfBranchCodesByPartner">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBranchCodesByPartner" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q1:ArrayOfBranchCodesByPartner" xmlns:q1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfBranchCodesByPartner" nillable="true" type="tns:ResultWithArrayOfBranchCodesByPartner"/>
+  <xs:complexType name="ServiceResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="q2:ArrayOfstring" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element minOccurs="0" name="WasSuccessful" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResult" nillable="true" type="tns:ServiceResult"/>
+  <xs:complexType name="ResultWithArrayOfBranchLocationsByPartner">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBranchLocationsByPartner" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q3:ArrayOfBranchLocationsByPartner" xmlns:q3="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfBranchLocationsByPartner" nillable="true" type="tns:ResultWithArrayOfBranchLocationsByPartner"/>
+  <xs:complexType name="ResultWithArrayOfBranchAuction">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBranchAuction" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q4:ArrayOfBranchAuction" xmlns:q4="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfBranchAuction" nillable="true" type="tns:ResultWithArrayOfBranchAuction"/>
+  <xs:complexType name="ResultWithArrayOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfstring" Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q5:ArrayOfstring" xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfstring" nillable="true" type="tns:ResultWithArrayOfstring"/>
+  <xs:complexType name="ResultWithArrayOfStockNumbersByBranchCode">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfStockNumbersByBranchCode" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q6:ArrayOfStockNumbersByBranchCode" xmlns:q6="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfStockNumbersByBranchCode" nillable="true" type="tns:ResultWithArrayOfStockNumbersByBranchCode"/>
+  <xs:complexType name="ResultWithArrayOfRecentBidsByBranchCode">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfRecentBidsByBranchCode" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q7:ArrayOfRecentBidsByBranchCode" xmlns:q7="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfRecentBidsByBranchCode" nillable="true" type="tns:ResultWithArrayOfRecentBidsByBranchCode"/>
+  <xs:complexType name="ResultWithStockNumberRecentBid">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="StockNumberRecentBid" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q8:StockNumberRecentBid" xmlns:q8="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithStockNumberRecentBid" nillable="true" type="tns:ResultWithStockNumberRecentBid"/>
+  <xs:complexType name="ResultWithArrayOfAuctionPartner">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAuctionPartner" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q9:ArrayOfAuctionPartner" xmlns:q9="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfAuctionPartner" nillable="true" type="tns:ResultWithArrayOfAuctionPartner"/>
+  <xs:complexType name="ResultWithArrayOfVehicleInformation">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfVehicleInformation" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q10:ArrayOfVehicleInformation" xmlns:q10="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfVehicleInformation" nillable="true" type="tns:ResultWithArrayOfVehicleInformation"/>
+  <xs:complexType name="ResultWithArrayOfBuyItNowStock">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBuyItNowStock" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q11:ArrayOfBuyItNowStock" xmlns:q11="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithArrayOfBuyItNowStock" nillable="true" type="tns:ResultWithArrayOfBuyItNowStock"/>
+  <xs:complexType name="ResultWithInterchangeInfoResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultWith{0}" Namespace="http://schemas.datacontract.org/2004/07/IntegrationFeatureService.Core.Entity" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InterchangeInfoResult" Namespace="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestedData" nillable="true" type="q12:InterchangeInfoResult" xmlns:q12="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultWithInterchangeInfoResult" nillable="true" type="tns:ResultWithInterchangeInfoResult"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint></con:endpoints><con:operation id="87353013-fccd-4f6f-a914-850d6465b5dd" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranch" name="GetAuctionDatesByBranch" bindingOperationName="GetAuctionDatesByBranch" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44ea84e3-cca3-496d-b3de-71fa3ee4812c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetAuctionDatesByBranch>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <!--Optional:-->\r
+               <lkq1:AccountNumber>?</lkq1:AccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:BusinessTypeForAccountNumber>?</lkq1:BusinessTypeForAccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:UserName>?</lkq1:UserName>\r
+               <!--Optional:-->\r
+               <lkq1:UserPassword>?</lkq1:UserPassword>\r
+               <lkq1:VerificationCode>?</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerId>?</lkq2:PartnerId>\r
+            <!--Optional:-->\r
+            <lkq2:BranchCode>?</lkq2:BranchCode>\r
+         </lkq:request>\r
+      </lkq:GetAuctionDatesByBranch>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetAuctionDatesByBranch"/></con:call></con:operation><con:operation id="82852d44-e245-4fbf-90c4-ab1c8ef6450e" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetBranchInfo" name="GetBranchInfo" bindingOperationName="GetBranchInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="21248281-d61c-43c8-ab4b-af0f0302d5fc" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetBranchInfo>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <lkq1:VerificationCode>d41d2f52-ee5b-4750-ad00-6b74ef9a1c50</lkq1:VerificationCode>
+            </lkq1:UserRequestInfo>\r
+
+            <!--Optional:-->\r
+            <lkq2:BranchCodesByPartner>\r
+               <!--Zero or more repetitions:-->\r
+               <lkq2:BranchCodesByPartner>\r
+                  <!--Optional:-->\r
+                  <lkq2:BranchCodes>\r
+                     <!--Zero or more repetitions:-->\r
+                     <arr:string>136</arr:string>\r
+                  </lkq2:BranchCodes>\r
+                  <!--Optional:-->\r
+                  <lkq2:PartnerId>48</lkq2:PartnerId>\r
+               </lkq2:BranchCodesByPartner>\r
+            </lkq2:BranchCodesByPartner>\r
+         </lkq:request>\r
+      </lkq:GetBranchInfo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetBranchInfo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c4503fcf-e705-4d90-ba97-77040c4e7aca" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetBranchList" name="GetBranchList" bindingOperationName="GetBranchList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="65cb4ed1-d20f-4f19-843d-22af2d511ebd" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetBranchList>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <!--Optional:-->\r
+               <lkq1:AccountNumber>?</lkq1:AccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:BusinessTypeForAccountNumber>?</lkq1:BusinessTypeForAccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:UserName>?</lkq1:UserName>\r
+               <!--Optional:-->\r
+               <lkq1:UserPassword>?</lkq1:UserPassword>\r
+               <lkq1:VerificationCode>?</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerIds>\r
+               <!--Zero or more repetitions:-->\r
+               <arr:int>?</arr:int>\r
+            </lkq2:PartnerIds>\r
+         </lkq:request>\r
+      </lkq:GetBranchList>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetBranchList"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="059d0429-452b-4c6a-b8aa-f457a47b05db" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocks" name="GetBuyItNowStocks" bindingOperationName="GetBuyItNowStocks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7bcc6012-d9a3-46dd-abbb-a4e9621df430" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetBuyItNowStocks>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <!--Optional:-->\r
+               <lkq1:AccountNumber>?</lkq1:AccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:BusinessTypeForAccountNumber>?</lkq1:BusinessTypeForAccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:UserName>?</lkq1:UserName>\r
+               <!--Optional:-->\r
+               <lkq1:UserPassword>?</lkq1:UserPassword>\r
+               <lkq1:VerificationCode>?</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerId>?</lkq2:PartnerId>\r
+         </lkq:request>\r
+      </lkq:GetBuyItNowStocks>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetBuyItNowStocks"/></con:call></con:operation><con:operation id="abaa9c85-61c2-4f4b-8ea9-48cc53493494" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranch" name="GetChangedStockListByAuctionDateByBranch" bindingOperationName="GetChangedStockListByAuctionDateByBranch" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8315baed-bc85-43fc-8a67-da68ad8a2065" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" xmlns:sys="http://schemas.datacontract.org/2004/07/System">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetChangedStockListByAuctionDateByBranch>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               
+               <lkq1:VerificationCode>d41d2f52-ee5b-4750-ad00-6b74ef9a1c50</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerId>43</lkq2:PartnerId>\r
+            <!--Optional:-->\r
+            <lkq2:BranchCode>509</lkq2:BranchCode>\r
+            <!--Optional:-->\r
+            <lkq2:AuctionDate>\r
+               <sys:DateTime>2017-01-04</sys:DateTime>\r
+               <sys:OffsetMinutes>540</sys:OffsetMinutes>\r
+            </lkq2:AuctionDate>\r
+         </lkq:request>\r
+      </lkq:GetChangedStockListByAuctionDateByBranch>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListByAuctionDateByBranch"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4b81f6fe-8ba6-4dd2-96e2-c33fced897b6" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccess" name="GetChangedStockListbyLastAccess" bindingOperationName="GetChangedStockListbyLastAccess" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f8ed4162-e914-454c-b6c6-6d0875d6c45a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetChangedStockListbyLastAccess>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+              
+               <lkq1:VerificationCode>d41d2f52-ee5b-4750-ad00-6b74ef9a1c50</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerId>43</lkq2:PartnerId>\r
+         </lkq:request>\r
+      </lkq:GetChangedStockListbyLastAccess>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetChangedStockListbyLastAccess"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f256897d-3ec0-4ae8-b91e-2dab058c2ef1" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVin" name="GetInterchangeByVin" bindingOperationName="GetInterchangeByVin" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="761e6f19-4f0a-48f2-b3c0-477ea14d2c7c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetInterchangeByVin>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <!--Optional:-->\r
+               <lkq1:AccountNumber>?</lkq1:AccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:BusinessTypeForAccountNumber>?</lkq1:BusinessTypeForAccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:UserName>?</lkq1:UserName>\r
+               <!--Optional:-->\r
+               <lkq1:UserPassword>?</lkq1:UserPassword>\r
+               <lkq1:VerificationCode>?</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:Vin>?</lkq2:Vin>\r
+         </lkq:request>\r
+      </lkq:GetInterchangeByVin>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetInterchangeByVin"/></con:call></con:operation><con:operation id="a8fad082-24e9-4f17-8070-da1c8b9cb227" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetNewlyAssignedByPeriod" name="GetNewlyAssignedByPeriod" bindingOperationName="GetNewlyAssignedByPeriod" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a7f072ff-8e73-494d-8b8d-bc2ac6389a65" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetNewlyAssignedByPeriod>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+			<lkq1:VerificationCode>d41d2f52-ee5b-4750-ad00-6b74ef9a1c50</lkq1:VerificationCode>
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:NewlyAssignedVehicleDatesRequest>\r
+               <!--Optional:-->\r
+               <lkq2:StartDate>2016-12-23</lkq2:StartDate>\r
+               <!--Optional:-->\r
+               <lkq2:EndDate>2016-12-24</lkq2:EndDate>\r
+               <!--Optional:-->\r
+               <lkq2:MaxRows>1000</lkq2:MaxRows>\r
+            </lkq2:NewlyAssignedVehicleDatesRequest>\r
+         </lkq:request>\r
+      </lkq:GetNewlyAssignedByPeriod>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetNewlyAssignedByPeriod"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b2eec68c-7b68-4f65-9582-d4ac237403c8" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetPartnerIds" name="GetPartnerIds" bindingOperationName="GetPartnerIds" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ab978574-91e4-47a2-85a5-23a87ea05159" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegrationqc.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetPartnerIds>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <lkq1:VerificationCode>d41d2f52-ee5b-4750-ad00-6b74ef9a1c50</lkq1:VerificationCode>
+            </lkq1:UserRequestInfo>\r
+         </lkq:request>\r
+      </lkq:GetPartnerIds>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetPartnerIds"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="36e012bb-2458-4a35-a092-af68002ffb4c" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBid" name="GetStockCurrentBid" bindingOperationName="GetStockCurrentBid" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3dcc9efe-0171-4196-92b0-cd2793e9b994" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetStockCurrentBid>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <!--Optional:-->\r
+               <lkq1:AccountNumber>?</lkq1:AccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:BusinessTypeForAccountNumber>?</lkq1:BusinessTypeForAccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:UserName>?</lkq1:UserName>\r
+               <!--Optional:-->\r
+               <lkq1:UserPassword>?</lkq1:UserPassword>\r
+               <lkq1:VerificationCode>?</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerId>?</lkq2:PartnerId>\r
+            <!--Optional:-->\r
+            <lkq2:BranchCode>?</lkq2:BranchCode>\r
+            <!--Optional:-->\r
+            <lkq2:StockNumber>?</lkq2:StockNumber>\r
+         </lkq:request>\r
+      </lkq:GetStockCurrentBid>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetStockCurrentBid"/></con:call></con:operation><con:operation id="49282267-9cbd-4404-a672-e2862549c123" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetStockInfo" name="GetStockInfo" bindingOperationName="GetStockInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="29e24d16-7e8c-428b-96c5-1de29cc18d83" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetStockInfo>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <lkq1:VerificationCode>d41d2f52-ee5b-4750-ad00-6b74ef9a1c50</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerId>48</lkq2:PartnerId>\r
+            <!--Optional:-->\r
+            <lkq2:StockNumbersByBranchCode>\r
+               <!--Optional:-->\r
+               <lkq2:BranchCode>146</lkq2:BranchCode>\r
+               <!--Optional:-->\r
+               <lkq2:StockNumbers>\r
+                  <!--Zero or more repetitions:-->\r
+                  <arr:string>25612356</arr:string>\r
+               </lkq2:StockNumbers>\r
+            </lkq2:StockNumbersByBranchCode>\r
+         </lkq:request>\r
+      </lkq:GetStockInfo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetStockInfo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4cdbf43e-a6cf-41ae-9509-042e3540dea3" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranch" name="GetStockListByAuctionDateByBranch" bindingOperationName="GetStockListByAuctionDateByBranch" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="620b5354-8ebd-4bb5-a899-feafa26ddb5e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" xmlns:sys="http://schemas.datacontract.org/2004/07/System">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetStockListByAuctionDateByBranch>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <!--Optional:-->\r
+               <lkq1:AccountNumber>?</lkq1:AccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:BusinessTypeForAccountNumber>?</lkq1:BusinessTypeForAccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:UserName>?</lkq1:UserName>\r
+               <!--Optional:-->\r
+               <lkq1:UserPassword>?</lkq1:UserPassword>\r
+               <lkq1:VerificationCode>?</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerId>?</lkq2:PartnerId>\r
+            <!--Optional:-->\r
+            <lkq2:BranchCode>?</lkq2:BranchCode>\r
+            <!--Optional:-->\r
+            <lkq2:AuctionDate>\r
+               <sys:DateTime>?</sys:DateTime>\r
+               <sys:OffsetMinutes>?</sys:OffsetMinutes>\r
+            </lkq2:AuctionDate>\r
+         </lkq:request>\r
+      </lkq:GetStockListByAuctionDateByBranch>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetStockListByAuctionDateByBranch"/></con:call></con:operation><con:operation id="0cc03ce6-2e2c-4b1e-9489-96d0536028b2" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBids" name="GetStocksRecentBids" bindingOperationName="GetStocksRecentBids" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ad940ee0-fa61-4cc4-9586-a0a07be0438f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetStocksRecentBids>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <!--Optional:-->\r
+               <lkq1:AccountNumber>?</lkq1:AccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:BusinessTypeForAccountNumber>?</lkq1:BusinessTypeForAccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:UserName>?</lkq1:UserName>\r
+               <!--Optional:-->\r
+               <lkq1:UserPassword>?</lkq1:UserPassword>\r
+               <lkq1:VerificationCode>?</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerId>?</lkq2:PartnerId>\r
+         </lkq:request>\r
+      </lkq:GetStocksRecentBids>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetStocksRecentBids"/></con:call></con:operation><con:operation id="b84960e8-80ec-4dc9-aa0e-947a9682c247" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranch" name="GetUtcAuctionDateByBranch" bindingOperationName="GetUtcAuctionDateByBranch" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f6c4a2c8-fdd0-47c5-944b-140a7651da64" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:GetUtcAuctionDateByBranch>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <!--Optional:-->\r
+               <lkq1:AccountNumber>?</lkq1:AccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:BusinessTypeForAccountNumber>?</lkq1:BusinessTypeForAccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:UserName>?</lkq1:UserName>\r
+               <!--Optional:-->\r
+               <lkq1:UserPassword>?</lkq1:UserPassword>\r
+               <lkq1:VerificationCode>?</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:PartnerId>?</lkq2:PartnerId>\r
+            <!--Optional:-->\r
+            <lkq2:BranchCode>?</lkq2:BranchCode>\r
+         </lkq:request>\r
+      </lkq:GetUtcAuctionDateByBranch>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/GetUtcAuctionDateByBranch"/></con:call></con:operation><con:operation id="78b93a68-22e8-4f93-b0df-bda9e0dd0270" isOneWay="false" action="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformation" name="UploadVehicleInformation" bindingOperationName="UploadVehicleInformation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8da43089-6f92-4e59-b4cb-75c80ddce8ea" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://lkqintegration.ekeyconnect.com/Auction.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lkq="LKQCorp.LKQIntegrationService" xmlns:lkq1="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Entities" xmlns:lkq2="http://schemas.datacontract.org/2004/07/LKQIntegrationService.Core.Auction.Entities" xmlns:sys="http://schemas.datacontract.org/2004/07/System">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <lkq:UploadVehicleInformation>\r
+         <!--Optional:-->\r
+         <lkq:request>\r
+            <!--Optional:-->\r
+            <lkq1:UserRequestInfo>\r
+               <!--Optional:-->\r
+               <lkq1:AccountNumber>?</lkq1:AccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:BusinessTypeForAccountNumber>?</lkq1:BusinessTypeForAccountNumber>\r
+               <!--Optional:-->\r
+               <lkq1:UserName>?</lkq1:UserName>\r
+               <!--Optional:-->\r
+               <lkq1:UserPassword>?</lkq1:UserPassword>\r
+               <lkq1:VerificationCode>?</lkq1:VerificationCode>\r
+            </lkq1:UserRequestInfo>\r
+            <!--Optional:-->\r
+            <lkq2:VehicleInformationList>\r
+               <!--Zero or more repetitions:-->\r
+               <lkq2:VehicleInformationDto>\r
+                  <!--Optional:-->\r
+                  <lkq2:AuctionDate>\r
+                     <sys:DateTime>?</sys:DateTime>\r
+                     <sys:OffsetMinutes>?</sys:OffsetMinutes>\r
+                  </lkq2:AuctionDate>\r
+                  <!--Optional:-->\r
+                  <lkq2:BranchCode>?</lkq2:BranchCode>\r
+                  <!--Optional:-->\r
+                  <lkq2:ExtraField1>?</lkq2:ExtraField1>\r
+                  <!--Optional:-->\r
+                  <lkq2:ExtraField2>?</lkq2:ExtraField2>\r
+                  <!--Optional:-->\r
+                  <lkq2:ExtraField3>?</lkq2:ExtraField3>\r
+                  <!--Optional:-->\r
+                  <lkq2:ItemID>?</lkq2:ItemID>\r
+                  <!--Optional:-->\r
+                  <lkq2:Lane>?</lkq2:Lane>\r
+                  <!--Optional:-->\r
+                  <lkq2:LossType>?</lkq2:LossType>\r
+                  <!--Optional:-->\r
+                  <lkq2:OdoBrand>?</lkq2:OdoBrand>\r
+                  <!--Optional:-->\r
+                  <lkq2:Odometer>?</lkq2:Odometer>\r
+                  <!--Optional:-->\r
+                  <lkq2:PrimaryDamage>?</lkq2:PrimaryDamage>\r
+                  <!--Optional:-->\r
+                  <lkq2:RunAndDrive>?</lkq2:RunAndDrive>\r
+                  <!--Optional:-->\r
+                  <lkq2:SaleDocument>?</lkq2:SaleDocument>\r
+                  <!--Optional:-->\r
+                  <lkq2:SecondaryDamage>?</lkq2:SecondaryDamage>\r
+                  <!--Optional:-->\r
+                  <lkq2:Slot>?</lkq2:Slot>\r
+                  <!--Optional:-->\r
+                  <lkq2:Start>?</lkq2:Start>\r
+                  <!--Optional:-->\r
+                  <lkq2:StockNo>?</lkq2:StockNo>\r
+                  <!--Optional:-->\r
+                  <lkq2:Transmission>?</lkq2:Transmission>\r
+                  <!--Optional:-->\r
+                  <lkq2:VIN>?</lkq2:VIN>\r
+                  <!--Optional:-->\r
+                  <lkq2:VehicleInformationImage>\r
+                     <!--Zero or more repetitions:-->\r
+                     <lkq2:VehicleInformationImage>\r
+                        <!--Optional:-->\r
+                        <lkq2:LargeURL>?</lkq2:LargeURL>\r
+                        <!--Optional:-->\r
+                        <lkq2:ThumbnailURL>?</lkq2:ThumbnailURL>\r
+                     </lkq2:VehicleInformationImage>\r
+                  </lkq2:VehicleInformationImage>\r
+                  <!--Optional:-->\r
+                  <lkq2:VehicleMake>?</lkq2:VehicleMake>\r
+                  <!--Optional:-->\r
+                  <lkq2:VehicleModel>?</lkq2:VehicleModel>\r
+                  <!--Optional:-->\r
+                  <lkq2:VehicleTitle>?</lkq2:VehicleTitle>\r
+                  <!--Optional:-->\r
+                  <lkq2:VehicleYear>?</lkq2:VehicleYear>\r
+               </lkq2:VehicleInformationDto>\r
+            </lkq2:VehicleInformationList>\r
+         </lkq:request>\r
+      </lkq:UploadVehicleInformation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LKQCorp.LKQIntegrationService/Auction/UploadVehicleInformation"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

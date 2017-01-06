@@ -13,10 +13,12 @@ namespace Service
         /// </summary>
         static void Main()
         {
+            //new DownloadData().RunImageThreads();
+
             ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[] 
-            { 
-                new DownloadData() 
+            ServicesToRun = new ServiceBase[]
+            {
+                new DownloadData()
             };
             ServiceBase.Run(ServicesToRun);
         }

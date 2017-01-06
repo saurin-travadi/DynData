@@ -9,11 +9,15 @@ namespace DynData
     {
         static void Main(string[] args)
         {
+            //Supplment data
             //new LKQ.LKQClient().GetData();
             //new IAA.IAAClient().GetData();
             //new LKQ.LKQClient().PushData();
+
+            //HighRes
+            //new LKQ.LKQImageClient().SetHighResData();
             //new LKQ.LKQImageClient().GetData();
-            new LKQ.LKQImageClient().PushData();
+            //new LKQ.LKQImageClient().PushData();
         }
 
         
