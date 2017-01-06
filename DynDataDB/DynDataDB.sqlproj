@@ -64,6 +64,7 @@
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="Database Triggers\" />
     <Folder Include="SchemaComparison" />
+    <Folder Include="dbo\Functions\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Branch.sql" />
@@ -81,6 +82,24 @@
     <Build Include="dbo\Stored Procedures\SP_PUSHDATA.sql" />
     <Build Include="dbo\Stored Procedures\SP_NextJob.sql" />
     <Build Include="dbo\Stored Procedures\SP_ReRunJob.sql" />
+    <Build Include="dbo\Tables\STOCK_STG_IMAGES.sql" />
+    <Build Include="dbo\Tables\HighResStockStatusCode.sql" />
+    <Build Include="dbo\Tables\HighResStockImages.sql" />
+    <Build Include="dbo\Tables\HighResStock.sql" />
+    <Build Include="dbo\Tables\Config.sql" />
+    <Build Include="dbo\Functions\fn_Split.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateStockStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateStockImages.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdatePushedStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PUSHIMAGEDATA.sql" />
+    <Build Include="dbo\Stored Procedures\SP_IMAGEDATA.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GETSTOCKNUMBER.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GETSETTINGS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetNextStock.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetImages.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CleanUpData.sql" />
+    <Build Include="dbo\Stored Procedures\p_getUnProcessedImages.sql" />
+    <Build Include="dbo\Stored Procedures\p_getImageProcessingCount.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SchemaComparison\DB2Project.scmp" />

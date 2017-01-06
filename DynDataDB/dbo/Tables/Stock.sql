@@ -12,6 +12,8 @@
 
 
 
+
+
 GO
 CREATE UNIQUE NONCLUSTERED INDEX [PK_Stock]
     ON [dbo].[Stock]([StockID] ASC);
@@ -34,3 +36,8 @@ begin
    inner join inserted i on t.StockID=i.StockID 
 
 end
+GO
+CREATE NONCLUSTERED INDEX [IDX_Stock_ModifyDate]
+    ON [dbo].[Stock]([modify_date] ASC)
+    INCLUDE([StockNumber]);
+

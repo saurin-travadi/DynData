@@ -31,6 +31,8 @@
 
 
 
+
+
 GO
 create trigger trg_NonDDRStock on NonDDRStock
 after update
@@ -43,3 +45,8 @@ begin
    inner join inserted i on t.StockID=i.StockID and t.StockNo=i.StockNo
 
 end
+GO
+CREATE NONCLUSTERED INDEX [IDX_NonDDRStock_ModifyDate]
+    ON [dbo].[NonDDRStock]([modify_date] ASC)
+    INCLUDE([StockNo]);
+
